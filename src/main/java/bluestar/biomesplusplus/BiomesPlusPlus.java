@@ -17,7 +17,6 @@ public class BiomesPlusPlus implements ModInitializer
 	{
 		// Runs when Minecraft is in a mod-load-ready state
 		// However, some things (resources) may still be uninitialized (caution)
-
 		LOGGER.info("Hello Fabric world!");
 	}
 }

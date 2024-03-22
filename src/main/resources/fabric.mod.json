@@ -25,6 +25,10 @@
 
 		"fabric-datagen": [
 			"bluestar.biomesplusplus.BiomesPlusPlusDataGenerator"
+		],
+
+		"terrablender": [
+			"bluestar.biomesplusplus.world.biome.BppTerrablenderAPI"
 		]
 	},
 	"mixins": [
