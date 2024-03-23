@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "biomesplusplus",
 	"version": "${version}",
-	"name": "BiomesPlusPlus",
+	"name": "biomesplusplus",
 	"description": "Fabric port of Environs++ for 1.20.4+",
 	"authors": [
 		"BluestarUnderscore"
@@ -15,6 +15,14 @@
 	"icon": "assets/biomesplusplus/icon.png",
 	"environment": "*",
 	"entrypoints": {
+		"fabric-datagen": [
+			"bluestar.biomesplusplus.BiomesPlusPlusDataGenerator"
+		],
+
+		"datagen": [
+			"bluestar.biomesplusplus.BiomesPlusPlusDataGenerator"
+		],
+
 		"main": [
 			"bluestar.biomesplusplus.BiomesPlusPlus"
 		],
@@ -23,12 +31,8 @@
 			"bluestar.biomesplusplus.BiomesPlusPlusClient"
 		],
 
-		"fabric-datagen": [
-			"bluestar.biomesplusplus.BiomesPlusPlusDataGenerator"
-		],
-
 		"terrablender": [
-			"bluestar.biomesplusplus.world.biome.BppTerrablenderAPI"
+			"bluestar.biomesplusplus.BiomesPlusPlus"
 		]
 	},
 	"mixins": [
@@ -38,7 +42,8 @@
 		"fabricloader": ">=0.15.7",
 		"minecraft": "~1.20.4",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"terrablender": "*"
 	},
 	"suggests": {
 		"another-mod": "*"
