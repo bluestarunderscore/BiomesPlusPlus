@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "biomesplusplus",
 	"version": "${version}",
-	"name": "biomesplusplus",
+	"name": "BiomesPlusPlus (BPP)",
 	"description": "Fabric port of Environs++ for 1.20.4+",
 	"authors": [
 		"BluestarUnderscore"

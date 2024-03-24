@@ -16,15 +16,16 @@ public class BiomesPlusPlusMaterialRules {
     public static SurfaceRules.RuleSource makeRules() {
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
 
-        //SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
+        SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
         SurfaceRules.RuleSource stoneSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, STONE), STONE);
 
         return SurfaceRules.sequence(
                 SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.STONE_BASIN),
+                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, stoneSurface)),
+                                SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, grassSurface)),
 
-
-                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, stoneSurface)
-                )));
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
+                );
     }
 
 

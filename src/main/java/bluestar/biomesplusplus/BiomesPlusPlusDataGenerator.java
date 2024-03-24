@@ -1,5 +1,6 @@
 package bluestar.biomesplusplus;
 
+import bluestar.biomesplusplus.datagen.BppWorldGenerator;
 import bluestar.biomesplusplus.world.biome.BppBiomes;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -12,7 +13,8 @@ public class BiomesPlusPlusDataGenerator implements DataGeneratorEntrypoint {
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator)
 	{
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-		BiomesPlusPlus.LOGGER.info("IS THIS EVEN RUNNING");
+		BiomesPlusPlus.LOGGER.info("Init bpp datagen");
+		pack.addProvider(BppWorldGenerator::new);
 	}
 
 	//May not be registering properly, unsure

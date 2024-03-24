@@ -3,11 +3,13 @@ package bluestar.biomesplusplus.datagen;
 import bluestar.biomesplusplus.BiomesPlusPlus;
 
 import java.util.concurrent.CompletableFuture;
+
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import org.jetbrains.annotations.NotNull;
 
 
 public class BppWorldGenerator extends FabricDynamicRegistryProvider
@@ -25,8 +27,8 @@ public class BppWorldGenerator extends FabricDynamicRegistryProvider
         entries.addAll(registries.lookupOrThrow(Registries.BIOME));
     }
     @Override
-    public String getName()
+    public @NotNull String getName()
     {
-        return "World Gen";
+        return BiomesPlusPlus.MOD_ID;
     }
 }
