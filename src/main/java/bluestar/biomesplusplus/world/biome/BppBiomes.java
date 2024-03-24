@@ -13,6 +13,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.Music;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import org.jetbrains.annotations.Nullable;
@@ -26,15 +28,18 @@ public class BppBiomes
     private static final Music SWAMP_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP);
 
     public static final ResourceKey<Biome> STONE_BASIN = registerBiomeKey("stone_basin");
+    public static final ResourceKey<Biome> TALL_OAK_FOREST = registerBiomeKey("tall_oak_forest");
 
     public static void bootstrap(BootstapContext<Biome> context)
     {
+
         context.register(STONE_BASIN, stoneBasin(context));
+        context.register(TALL_OAK_FOREST, talLOakForest(context));
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder)
     {
-        BiomesPlusPlus.LOGGER.info("Init default region features for bpp overworld");
+        //BiomesPlusPlus.LOGGER.info("Init default region features for bpp overworld");
         BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
@@ -63,19 +68,60 @@ public class BppBiomes
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
-                .downfall(0.1F)
-                .temperature(1.8F)
+                .downfall(0.2F)
+                .temperature(1.4F)
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
                 .specialEffects((new BiomeSpecialEffects.Builder())
                         .waterColor(BppBiomeColors.DEFAULT_WATER_COLOR)
                         .waterFogColor(BppBiomeColors.DEFAULT_WATER_FOG_COLOR)
-                        .skyColor(BppBiomeColors.SAVANNA_SKY_COLOR)
+                        .skyColor(BppBiomeColors.DESERT_BADLANDS_SKY_COLOR)
                         .fogColor(BppBiomeColors.DEFAULT_FOG_COLOR)
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                         .build())
                 .build();
 
+    }
+
+    public static Biome talLOakForest(BootstapContext<Biome> context)
+    {
+        BiomesPlusPlus.LOGGER.info("Init default biome features for bpp tallOakForest");
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE),
+                        context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_FOREST);
+        //BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.8F)
+                .temperature(0.7F)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(BppBiomeColors.DEFAULT_WATER_COLOR)
+                        .waterFogColor(BppBiomeColors.DEFAULT_WATER_FOG_COLOR)
+                        .skyColor(BppBiomeColors.PLAINS_SKY_COLOR)
+                        .fogColor(BppBiomeColors.DEFAULT_FOG_COLOR)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .backgroundMusic(FOREST_MUSIC)
+                        .build())
+                .build();
     }
 
     /*

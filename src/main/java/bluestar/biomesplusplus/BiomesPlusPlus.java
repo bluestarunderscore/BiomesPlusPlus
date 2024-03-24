@@ -33,7 +33,7 @@ public class BiomesPlusPlus implements ModInitializer, TerraBlenderApi
 	@Override
 	public void onTerraBlenderInitialized()
 	{
-		Regions.register(new BiomesPlusPlusOverworldRegion(new ResourceLocation(MOD_ID, "overworld"), 10));
+		Regions.register(new BiomesPlusPlusOverworldRegion(new ResourceLocation(MOD_ID, "overworld"), 5));
 
 		SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, BiomesPlusPlusMaterialRules.makeRules());
 	}
