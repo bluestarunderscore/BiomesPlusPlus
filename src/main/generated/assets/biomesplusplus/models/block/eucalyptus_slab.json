@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "biomesplusplus:block/eucalyptus_planks",
+    "side": "biomesplusplus:block/eucalyptus_planks",
+    "top": "biomesplusplus:block/eucalyptus_planks"
+  }
+}

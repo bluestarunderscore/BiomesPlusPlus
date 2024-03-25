@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "biomesplusplus:block/eucalyptus_slab"
+    },
+    "type=double": {
+      "model": "biomesplusplus:block/eucalyptus_planks"
+    },
+    "type=top": {
+      "model": "biomesplusplus:block/eucalyptus_slab_top"
+    }
+  }
+}

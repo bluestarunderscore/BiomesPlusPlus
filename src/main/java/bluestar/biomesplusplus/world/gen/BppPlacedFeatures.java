@@ -17,12 +17,15 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.RarityFilter;
 
 import java.util.List;
 
 public class BppPlacedFeatures
 {
     public static final ResourceKey<PlacedFeature> TALL_OAK_KEY_PLACED = registerKey("tall_oak");
+    public static final ResourceKey<PlacedFeature> FANCY_BIRCH_KEY_PLACED = registerKey("fancy_birch");
+    public static final ResourceKey<PlacedFeature> EUCALYPTUS_KEY_PLACED = registerKey("eucalyptus");
 
 
     public static void bootstrap(BootstapContext<PlacedFeature> context)
@@ -30,6 +33,12 @@ public class BppPlacedFeatures
         var configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
         register(context, TALL_OAK_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.TALL_OAK_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(9, 0.01f, 10),(Blocks.OAK_SAPLING)));
+
+        register(context, FANCY_BIRCH_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.FANCY_BIRCH_KEY),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(15),(Blocks.OAK_SAPLING)));
+
+        register(context, EUCALYPTUS_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.EUCALYPTUS_KEY),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(29),(Blocks.OAK_SAPLING)));
 
     }
 

@@ -1,6 +1,6 @@
 package bluestar.biomesplusplus;
 
-import bluestar.biomesplusplus.datagen.BppWorldGenerator;
+import bluestar.biomesplusplus.datagen.*;
 import bluestar.biomesplusplus.world.biome.BppBiomes;
 import bluestar.biomesplusplus.world.gen.BppConfiguredFeatures;
 import bluestar.biomesplusplus.world.gen.BppPlacedFeatures;
@@ -15,8 +15,12 @@ public class BiomesPlusPlusDataGenerator implements DataGeneratorEntrypoint {
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator)
 	{
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
+		pack.addProvider(BppBlockTagGenerator::new);
+		pack.addProvider(BppItemTagGenerator::new);
+		pack.addProvider(BppRecipeGenerator::new);
+		pack.addProvider(BppLootTableGenerator::new);
+		pack.addProvider(BppModelGenerator::new);
 		pack.addProvider(BppWorldGenerator::new);
-
 	}
 
 	@Override

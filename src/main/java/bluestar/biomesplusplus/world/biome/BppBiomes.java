@@ -34,7 +34,7 @@ public class BppBiomes
     {
 
         context.register(STONE_BASIN, stoneBasin(context));
-        context.register(TALL_OAK_FOREST, talLOakForest(context));
+        context.register(TALL_OAK_FOREST, tallOakForest(context));
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder)
@@ -83,7 +83,7 @@ public class BppBiomes
 
     }
 
-    public static Biome talLOakForest(BootstapContext<Biome> context)
+    public static Biome tallOakForest(BootstapContext<Biome> context)
     {
         BiomesPlusPlus.LOGGER.info("Init default biome features for bpp tallOakForest");
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
@@ -99,9 +99,9 @@ public class BppBiomes
         globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
 
-
+        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_FOREST);
-        //BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+
 
 
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);

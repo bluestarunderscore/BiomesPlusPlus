@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "biomesplusplus:block/stripped_eucalyptus_log",
+    "side": "biomesplusplus:block/stripped_eucalyptus_log"
+  }
+}
