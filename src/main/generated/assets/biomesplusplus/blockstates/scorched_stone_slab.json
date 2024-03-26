@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "biomesplusplus:block/scorched_stone_slab"
+    },
+    "type=double": {
+      "model": "biomesplusplus:block/scorched_stone"
+    },
+    "type=top": {
+      "model": "biomesplusplus:block/scorched_stone_slab_top"
+    }
+  }
+}

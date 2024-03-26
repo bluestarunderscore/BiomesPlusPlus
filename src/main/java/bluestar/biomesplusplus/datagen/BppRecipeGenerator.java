@@ -21,9 +21,14 @@ public class BppRecipeGenerator extends FabricRecipeProvider
     @Override
     public void buildRecipes(RecipeOutput exporter)
     {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.SCORCHED_STONE_BRICKS, 4).pattern("CC").pattern("CC").define('C', BppBlocks.SCORCHED_STONE).unlockedBy(getHasName(BppBlocks.SCORCHED_STONE), has(BppBlocks.SCORCHED_STONE)).save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.SCORCHED_STONE_BRICKS)));
+
+        //PLANKS (LOG AND BARK)
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BppBlocks.EUCALYPTUS_PLANKS, 4).requires(BppBlocks.EUCALYPTUS_LOG).unlockedBy(getHasName(BppBlocks.EUCALYPTUS_LOG), FabricRecipeProvider.has(BppBlocks.EUCALYPTUS_PLANKS)).save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.EUCALYPTUS_PLANKS)));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BppBlocks.EUCALYPTUS_PLANKS, 4).requires(BppBlocks.EUCALYPTUS_WOOD).unlockedBy(getHasName(BppBlocks.EUCALYPTUS_WOOD), FabricRecipeProvider.has(BppBlocks.EUCALYPTUS_PLANKS)).save(exporter, new ResourceLocation("stripped_eucalyptus_planks"));
 
+
+        //WOOD-RELATED
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BppBlocks.EUCALYPTUS_BUTTON, 1).requires(BppBlocks.EUCALYPTUS_PLANKS).unlockedBy(getHasName(BppBlocks.EUCALYPTUS_PLANKS), FabricRecipeProvider.has(BppBlocks.EUCALYPTUS_BUTTON)).save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.EUCALYPTUS_BUTTON)));
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BppBlocks.EUCALYPTUS_SLAB, 6).pattern("PPP").define('P', BppBlocks.EUCALYPTUS_PLANKS).unlockedBy(getHasName(BppBlocks.EUCALYPTUS_PLANKS), has(BppBlocks.EUCALYPTUS_PLANKS)).save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.EUCALYPTUS_SLAB)));
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BppBlocks.EUCALYPTUS_STAIRS, 4).pattern("P  ").pattern("PP ").pattern("PPP").define('P', BppBlocks.EUCALYPTUS_PLANKS).unlockedBy(getHasName(BppBlocks.EUCALYPTUS_PLANKS), has(BppBlocks.EUCALYPTUS_PLANKS)).save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.EUCALYPTUS_STAIRS)));

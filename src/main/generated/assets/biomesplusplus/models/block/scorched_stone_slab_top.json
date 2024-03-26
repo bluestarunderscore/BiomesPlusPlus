@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "biomesplusplus:block/scorched_stone",
+    "side": "biomesplusplus:block/scorched_stone",
+    "top": "biomesplusplus:block/scorched_stone"
+  }
+}

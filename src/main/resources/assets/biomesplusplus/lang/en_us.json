@@ -1,6 +1,35 @@
 {
   "itemgroup.biomesplusplus" : "Biomes++",
 
+  "block.biomesplusplus.scorched_dirt" : "Scorched Dirt",
+  "block.biomesplusplus.coarse_scorched_dirt" : "Coarse Scorched Dirt",
+  "block.biomesplusplus.scorched_stone" : "Scorched Stone",
+  "block.biomesplusplus.scorched_stone_slab" : "Scorched Stone Slab",
+  "block.biomesplusplus.scorched_stone_stairs" : "Scorched Stone Stairs",
+
+  "block.biomesplusplus.scorched_cobblestone" : "Scorched Cobblestone",
+  "block.biomesplusplus.scorched_cobblestone_slab" : "Scorched Cobblestone Slab",
+  "block.biomesplusplus.scorched_cobblestone_stairs" : "Scorched Cobblestone Stairs",
+  "block.biomesplusplus.scorched_cobblestone_wall" : "Scorched Cobblestone Wall",
+
+  "block.biomesplusplus.mossy_scorched_cobblestone" : "Mossy Scorched Cobblestone",
+  "block.biomesplusplus.mossy_scorched_cobblestone_slab" : "Mossy Scorched Cobblestone Slab",
+  "block.biomesplusplus.mossy_scorched_cobblestone_stairs" : "Mossy Scorched Cobblestone Stairs",
+  "block.biomesplusplus.mossy_scorched_cobblestone_wall" : "Mossy Scorched Cobblestone Wall",
+
+  "block.biomesplusplus.scorched_stone_bricks" : "Scorched Stone Bricks",
+  "block.biomesplusplus.scorched_stone_brick_slab" : "Scorched Stone Brick Slab",
+  "block.biomesplusplus.scorched_stone_brick_stairs" : "Scorched Stone Brick Stairs",
+  "block.biomesplusplus.scorched_stone_brick_wall" : "Scorched Stone Brick Wall",
+
+  "block.biomesplusplus.cracked_scorched_stone_bricks" : "Cracked Scorched Stone Bricks",
+
+  "block.biomesplusplus.mossy_scorched_stone_bricks" : "Mossy Scorched Stone Bricks",
+  "block.biomesplusplus.mossy_scorched_stone_brick_slab" : "Mossy Scorched Stone Brick Slab",
+  "block.biomesplusplus.mossy_scorched_stone_brick_stairs" : "Mossy Scorched Stone Brick Stairs",
+  "block.biomesplusplus.mossy_scorched_stone_brick_wall" : "Mossy Scorched Stone Brick Wall",
+
+
   "block.biomesplusplus.fancy_birch_sapling" : "Large Birch Sapling",
 
   "block.biomesplusplus.eucalyptus_sapling" : "Eucalyptus Sapling",

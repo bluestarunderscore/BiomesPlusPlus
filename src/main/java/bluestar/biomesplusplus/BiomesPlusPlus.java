@@ -3,6 +3,7 @@ package bluestar.biomesplusplus;
 import bluestar.biomesplusplus.registry.BppRegistryLoader;
 import bluestar.biomesplusplus.world.biome.BiomesPlusPlusOverworldRegion;
 import bluestar.biomesplusplus.world.biome.surface.BiomesPlusPlusMaterialRules;
+import bluestar.biomesplusplus.world.gen.tree.custom.BppTrunkPlacerTypes;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.ResourceLocation;
 
@@ -27,6 +28,7 @@ public class BiomesPlusPlus implements ModInitializer, TerraBlenderApi
 	{
 		BppRegistryLoader.loadCoreRegistries();
 		BppRegistryLoader.loadLevelRegistries();
+		BppTrunkPlacerTypes.init();
 		LOGGER.info("BiomesPlusPlus loaded");
 	}
 

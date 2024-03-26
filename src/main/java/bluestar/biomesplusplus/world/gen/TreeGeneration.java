@@ -22,5 +22,17 @@ public class TreeGeneration
                         Biomes.SAVANNA_PLATEAU, Biomes.MEADOW),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.EUCALYPTUS_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.TALL_OAK_WETLAND),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.TALL_SWAMP_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.WASTELAND, BppBiomes.SILK_WETLAND),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.DEAD_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.DARK_SWAMP),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.ROOFED_VINED_KEY_PLACED);
     }
 }

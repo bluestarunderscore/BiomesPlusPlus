@@ -15,4 +15,15 @@ public class BppBiomeColors
 
     public static final int MOUNTAIN_SKY_COLOR_LOW = 8495359;
     public static final int MOUNTAIN_SKY_COLOR_HIGH = 8756735;
+
+    //Overrides
+    public static final int ROOFED_SWAMP_SKY_COLOR = 7039816;
+    public static final int ROOFED_SWAMP_FOLIAGE_COLOR = 9539892;
+    public static final int ROOFED_SWAMP_GRASS_COLOR = 7627817;
+
+    public static final int SILK_WETLAND_SKY_COLOR = 13553906;
+    public static final int SILK_WETLAND_FOLIAGE_COLOR = 14146486;
+    public static final int SILK_WETLAND_GRASS_COLOR = 13420973;
+
+
 }

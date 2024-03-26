@@ -19,6 +19,66 @@ public class BppBlockTagGenerator extends FabricTagProvider.BlockTagProvider
     @Override
     protected void addTags(HolderLookup.Provider arg)
     {
+        getOrCreateTagBuilder(BlockTags.SLABS)
+                .add(BppBlocks.SCORCHED_STONE_SLAB)
+                .add(BppBlocks.SCORCHED_COBBLESTONE_SLAB)
+                .add(BppBlocks.SCORCHED_STONE_BRICK_SLAB)
+                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_SLAB)
+                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_SLAB);
+
+        getOrCreateTagBuilder(BlockTags.STAIRS)
+                .add(BppBlocks.SCORCHED_STONE_STAIRS)
+                .add(BppBlocks.SCORCHED_COBBLESTONE_STAIRS)
+                .add(BppBlocks.SCORCHED_STONE_BRICK_STAIRS)
+                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_STAIRS)
+                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_STAIRS);
+
+        getOrCreateTagBuilder(BlockTags.WALLS)
+                .add(BppBlocks.SCORCHED_COBBLESTONE_WALL)
+                .add(BppBlocks.SCORCHED_STONE_BRICK_WALL)
+                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_WALL)
+                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_WALL);
+
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(BppBlocks.SCORCHED_DIRT)
+                .add(BppBlocks.COARSE_SCORCHED_DIRT);
+
+        getOrCreateTagBuilder(BlockTags.DIRT)
+                .add(BppBlocks.SCORCHED_DIRT)
+                .add(BppBlocks.COARSE_SCORCHED_DIRT);
+
+        getOrCreateTagBuilder(BlockTags.STONE_BRICKS)
+                .add(BppBlocks.SCORCHED_STONE_BRICKS)
+                .add(BppBlocks.CRACKED_SCORCHED_STONE_BRICKS)
+                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS);
+
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(BppBlocks.SCORCHED_COBBLESTONE)
+                .add(BppBlocks.SCORCHED_COBBLESTONE_SLAB)
+                .add(BppBlocks.SCORCHED_COBBLESTONE_STAIRS)
+                .add(BppBlocks.SCORCHED_COBBLESTONE_WALL)
+
+                .add(BppBlocks.SCORCHED_STONE)
+                .add(BppBlocks.SCORCHED_STONE_SLAB)
+                .add(BppBlocks.SCORCHED_STONE_STAIRS)
+
+                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE)
+                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_STAIRS)
+                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_SLAB)
+                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_WALL)
+
+                .add(BppBlocks.SCORCHED_STONE_BRICKS)
+                .add(BppBlocks.SCORCHED_STONE_BRICK_SLAB)
+                .add(BppBlocks.SCORCHED_STONE_BRICK_STAIRS)
+                .add(BppBlocks.SCORCHED_STONE_BRICK_WALL)
+
+                .add(BppBlocks.CRACKED_SCORCHED_STONE_BRICKS)
+
+                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS)
+                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_SLAB)
+                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_STAIRS)
+                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_WALL);
+
         getOrCreateTagBuilder(BlockTags.LOGS)
                 .add(BppBlocks.EUCALYPTUS_LOG)
                 .add(BppBlocks.EUCALYPTUS_WOOD)
@@ -38,7 +98,8 @@ public class BppBlockTagGenerator extends FabricTagProvider.BlockTagProvider
                 .add(BppBlocks.EUCALYPTUS_LEAVES);
 
         getOrCreateTagBuilder(BlockTags.SAPLINGS)
-                .add(BppBlocks.EUCALYPTUS_SAPLING);
+                .add(BppBlocks.EUCALYPTUS_SAPLING)
+                .add(BppBlocks.FANCY_BIRCH_SAPLING);
 
         getOrCreateTagBuilder(BlockTags.FENCES)
                 .add(BppBlocks.EUCALYPTUS_FENCE);

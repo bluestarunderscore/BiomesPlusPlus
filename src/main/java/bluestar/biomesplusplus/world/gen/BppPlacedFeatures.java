@@ -26,6 +26,9 @@ public class BppPlacedFeatures
     public static final ResourceKey<PlacedFeature> TALL_OAK_KEY_PLACED = registerKey("tall_oak");
     public static final ResourceKey<PlacedFeature> FANCY_BIRCH_KEY_PLACED = registerKey("fancy_birch");
     public static final ResourceKey<PlacedFeature> EUCALYPTUS_KEY_PLACED = registerKey("eucalyptus");
+    public static final ResourceKey<PlacedFeature> TALL_SWAMP_KEY_PLACED = registerKey("tall_swamp");
+    public static final ResourceKey<PlacedFeature> DEAD_KEY_PLACED = registerKey("dead");
+    public static final ResourceKey<PlacedFeature> ROOFED_VINED_KEY_PLACED = registerKey("roofed_vined");
 
 
     public static void bootstrap(BootstapContext<PlacedFeature> context)
@@ -39,6 +42,15 @@ public class BppPlacedFeatures
 
         register(context, EUCALYPTUS_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.EUCALYPTUS_KEY),
                 VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(29),(Blocks.OAK_SAPLING)));
+
+        register(context, TALL_SWAMP_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.TALL_SWAMP_KEY),
+            VegetationPlacements.treePlacement(PlacementUtils.countExtra(9, 0.01f, 10),(Blocks.OAK_SAPLING)));
+
+        register(context, DEAD_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.DEAD_KEY),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(2),(Blocks.OAK_SAPLING)));
+
+        register(context, ROOFED_VINED_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.ROOFED_VINED_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(50, 0.01f, 1),(Blocks.OAK_SAPLING)));
 
     }
 

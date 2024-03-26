@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "biomesplusplus:scorched_cobblestone",
+    "biomesplusplus:scorched_cobblestone_slab",
+    "biomesplusplus:scorched_cobblestone_stairs",
+    "biomesplusplus:scorched_cobblestone_wall",
+    "biomesplusplus:scorched_stone",
+    "biomesplusplus:scorched_stone_slab",
+    "biomesplusplus:scorched_stone_stairs",
+    "biomesplusplus:mossy_scorched_cobblestone",
+    "biomesplusplus:mossy_scorched_cobblestone_stairs",
+    "biomesplusplus:mossy_scorched_cobblestone_slab",
+    "biomesplusplus:mossy_scorched_cobblestone_wall",
+    "biomesplusplus:scorched_stone_bricks",
+    "biomesplusplus:scorched_stone_brick_slab",
+    "biomesplusplus:scorched_stone_brick_stairs",
+    "biomesplusplus:scorched_stone_brick_wall",
+    "biomesplusplus:cracked_scorched_stone_bricks",
+    "biomesplusplus:mossy_scorched_stone_bricks",
+    "biomesplusplus:mossy_scorched_stone_brick_slab",
+    "biomesplusplus:mossy_scorched_stone_brick_stairs",
+    "biomesplusplus:mossy_scorched_stone_brick_wall"
+  ]
+}

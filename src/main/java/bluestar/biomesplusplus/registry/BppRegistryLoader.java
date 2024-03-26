@@ -4,6 +4,7 @@ import bluestar.biomesplusplus.BiomesPlusPlus;
 import bluestar.biomesplusplus.BiomesPlusPlusGroup;
 import bluestar.biomesplusplus.block.BppFlammableBlocks;
 import bluestar.biomesplusplus.block.BppFuels;
+import bluestar.biomesplusplus.block.BppPathable;
 import bluestar.biomesplusplus.block.BppStrippable;
 import bluestar.biomesplusplus.world.gen.WorldGeneration;
 
@@ -13,6 +14,7 @@ public class BppRegistryLoader
     {
         BiomesPlusPlus.LOGGER.info("Loading core registries");
         BiomesPlusPlusGroup.registerItemGroups();
+
         BiomesPlusPlus.LOGGER.info("Core registries loaded");
     }
 
@@ -23,6 +25,7 @@ public class BppRegistryLoader
         BppFuels.registerFuels();
         BppFlammableBlocks.registerFlammableBlocks();
         BppStrippable.registerStrippedLogs();
+        BppPathable.registerPathBlocks();
         BiomesPlusPlus.LOGGER.info("Worldgen registries loaded");
     }
 }

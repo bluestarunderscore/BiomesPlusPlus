@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "biomesplusplus:scorched_stone_slab",
+    "biomesplusplus:scorched_cobblestone_slab",
+    "biomesplusplus:scorched_stone_brick_slab",
+    "biomesplusplus:mossy_scorched_stone_brick_slab",
+    "biomesplusplus:mossy_scorched_cobblestone_slab"
+  ]
+}

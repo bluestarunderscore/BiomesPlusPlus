@@ -2,10 +2,9 @@ package bluestar.biomesplusplus.world.gen;
 
 import bluestar.biomesplusplus.BiomesPlusPlus;
 import bluestar.biomesplusplus.block.BppBlocks;
-import bluestar.biomesplusplus.world.biome.surface.BiomesPlusPlusMaterialRules;
+import bluestar.biomesplusplus.world.gen.tree.BppTrees;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -13,49 +12,37 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
-import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
 public class BppConfiguredFeatures
 {
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_OAK_KEY = registerKey("tall_oak");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_BIRCH_KEY = registerKey("fancy_birch");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EUCALYPTUS_KEY = registerKey("eucalyptus");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_SWAMP_KEY = registerKey("tall_swamp");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ROOFED_VINED_KEY = registerKey("roofed_vined");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DEAD_KEY = registerKey("dead");
+
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context)
     {
-        register(context, TALL_OAK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(Blocks.OAK_LOG),
-                new StraightTrunkPlacer(10,2,0),
-                BlockStateProvider.simple(Blocks.OAK_LEAVES),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
-                new TwoLayersFeatureSize(1,0,2))
-                .build());
+        register(context, TALL_OAK_KEY, Feature.TREE,
+                BppTrees.getStandardOakTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES, 10, 2));
 
-        register(context, FANCY_BIRCH_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(Blocks.BIRCH_LOG),
-                new FancyTrunkPlacer(3, 11, 0),
-                BlockStateProvider.simple(Blocks.BIRCH_LEAVES),
-                new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
-                new TwoLayersFeatureSize(0, 0, 0))
-                .build());
+        register(context, FANCY_BIRCH_KEY, Feature.TREE,
+                BppTrees.getStandardFancyTree(Blocks.BIRCH_LOG, Blocks.BIRCH_LEAVES));
 
-        register(context, EUCALYPTUS_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(BppBlocks.EUCALYPTUS_LOG),
-                new ForkingTrunkPlacer(6, 2, 2),
-                BlockStateProvider.simple(BppBlocks.EUCALYPTUS_LEAVES),
-                new AcaciaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0)),
-                new TwoLayersFeatureSize(1,0,2))
-                .build());
+        register(context, EUCALYPTUS_KEY, Feature.TREE,
+                BppTrees.getAcaciaTree(BppBlocks.EUCALYPTUS_LOG, BppBlocks.EUCALYPTUS_LEAVES));
 
+        register(context, TALL_SWAMP_KEY, Feature.TREE,
+                BppTrees.getSwampTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES, 12, 4));
+
+        register(context, DEAD_KEY, Feature.TREE,
+                BppTrees.getStandardFancyTree(Blocks.DARK_OAK_LOG, Blocks.AIR));
+
+        register(context, ROOFED_VINED_KEY, Feature.TREE,
+                BppTrees.getDarkOakTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES, true));
     }
 
 

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "biomesplusplus:block/mossy_scorched_cobblestone",
+    "side": "biomesplusplus:block/mossy_scorched_cobblestone",
+    "top": "biomesplusplus:block/mossy_scorched_cobblestone"
+  }
+}

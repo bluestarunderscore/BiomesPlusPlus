@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "biomesplusplus:eucalyptus_sapling"
+    "biomesplusplus:eucalyptus_sapling",
+    "biomesplusplus:fancy_birch_sapling"
   ]
 }

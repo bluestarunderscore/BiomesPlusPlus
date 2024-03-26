@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "biomesplusplus:block/mossy_scorched_stone_bricks"
+  }
+}

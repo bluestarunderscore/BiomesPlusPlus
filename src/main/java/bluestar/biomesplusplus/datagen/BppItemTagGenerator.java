@@ -20,6 +20,11 @@ public class BppItemTagGenerator extends FabricTagProvider.ItemTagProvider
     @Override
     protected void addTags(HolderLookup.Provider arg)
     {
+        getOrCreateTagBuilder(ItemTags.STONE_BRICKS)
+                .add(BppBlocks.SCORCHED_STONE_BRICKS.asItem())
+                .add(BppBlocks.CRACKED_SCORCHED_STONE_BRICKS.asItem())
+                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS.asItem());
+
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(BppBlocks.EUCALYPTUS_PLANKS.asItem());
 

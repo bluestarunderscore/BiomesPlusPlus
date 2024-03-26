@@ -14,6 +14,26 @@ public class BppLootTableGenerator extends FabricBlockLootTableProvider
     @Override
     public void generate()
     {
+        //Wasteland blocks
+        dropSelf(BppBlocks.SCORCHED_DIRT);
+        dropSelf(BppBlocks.COARSE_SCORCHED_DIRT);
+
+        dropSelf(BppBlocks.SCORCHED_COBBLESTONE);
+        dropSelf(BppBlocks.SCORCHED_COBBLESTONE_STAIRS);
+        dropSelf(BppBlocks.SCORCHED_COBBLESTONE_WALL);
+        dropSelf(BppBlocks.MOSSY_SCORCHED_COBBLESTONE);
+        dropSelf(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_STAIRS);
+        dropSelf(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_WALL);
+        dropSelf(BppBlocks.SCORCHED_STONE);
+        dropSelf(BppBlocks.SCORCHED_STONE_STAIRS);
+        dropSelf(BppBlocks.SCORCHED_STONE_BRICKS);
+        dropSelf(BppBlocks.SCORCHED_STONE_BRICK_STAIRS);
+        dropSelf(BppBlocks.SCORCHED_STONE_BRICK_WALL);
+        dropSelf(BppBlocks.CRACKED_SCORCHED_STONE_BRICKS);
+        dropSelf(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS);
+        dropSelf(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_STAIRS);
+        dropSelf(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_WALL);
+
         dropSelf(BppBlocks.EUCALYPTUS_SAPLING);
         dropSelf(BppBlocks.FANCY_BIRCH_SAPLING);
 
@@ -39,6 +59,11 @@ public class BppLootTableGenerator extends FabricBlockLootTableProvider
         dropSelf(BppBlocks.EUCALYPTUS_PRESSURE_PLATE);
 
         add(BppBlocks.EUCALYPTUS_SLAB, createSlabItemTable(BppBlocks.EUCALYPTUS_SLAB));
+        add(BppBlocks.SCORCHED_STONE_SLAB, createSlabItemTable(BppBlocks.SCORCHED_STONE_SLAB));
+        add(BppBlocks.SCORCHED_COBBLESTONE_SLAB, createSlabItemTable(BppBlocks.SCORCHED_COBBLESTONE_SLAB));
+        add(BppBlocks.SCORCHED_STONE_BRICK_SLAB, createSlabItemTable(BppBlocks.SCORCHED_STONE_BRICK_SLAB));
+        add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_SLAB, createSlabItemTable(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_SLAB));
+        add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_SLAB, createSlabItemTable(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_SLAB));
         add(BppBlocks.EUCALYPTUS_DOOR, createDoorTable(BppBlocks.EUCALYPTUS_DOOR));
 
 
