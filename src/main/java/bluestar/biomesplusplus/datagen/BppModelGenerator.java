@@ -6,6 +6,10 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
 import net.minecraft.data.models.model.ModelTemplates;
+import net.minecraft.data.models.model.TextureMapping;
+import net.minecraft.data.models.model.TexturedModel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
 
 public class BppModelGenerator extends FabricModelProvider
 {
@@ -25,7 +29,8 @@ public class BppModelGenerator extends FabricModelProvider
                 .log(BppBlocks.STRIPPED_EUCALYPTUS_LOG)
                 .wood(BppBlocks.STRIPPED_EUCALYPTUS_WOOD);
 
-        generator.createTrivialCube(BppBlocks.EUCALYPTUS_LEAVES);
+        //TODO: CREATE (BY HAND) MODELS FOR TINTED BLOCKS
+        generator.createTrivialBlock(BppBlocks.EUCALYPTUS_LEAVES, TexturedModel.LEAVES);
 
         //generator.createTrivialCube(BppBlocks.SCORCHED_STONE);
         //generator.createTrivialCube(BppBlocks.SCORCHED_COBBLESTONE);

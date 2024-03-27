@@ -4,14 +4,10 @@ import bluestar.biomesplusplus.world.gen.tree.custom.TallSwampTrunkPlacer;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
@@ -77,5 +73,15 @@ public class BppTrees
                 new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty()))
                 .decorators(ImmutableList.of(new LeaveVineDecorator(0.31f))).build();
 
+    }
+
+    public static TreeConfiguration getBush(Block log, Block leaves)
+    {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(log),
+                new StraightTrunkPlacer(1, 0, 0),
+                BlockStateProvider.simple(leaves),
+                new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
+                new TwoLayersFeatureSize(0, 0, 0)).build();
     }
 }

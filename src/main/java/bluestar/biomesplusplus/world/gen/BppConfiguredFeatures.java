@@ -5,6 +5,8 @@ import bluestar.biomesplusplus.block.BppBlocks;
 import bluestar.biomesplusplus.world.gen.tree.BppTrees;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -12,6 +14,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+
+import java.util.List;
 
 public class BppConfiguredFeatures
 {
@@ -20,8 +27,9 @@ public class BppConfiguredFeatures
     public static final ResourceKey<ConfiguredFeature<?, ?>> EUCALYPTUS_KEY = registerKey("eucalyptus");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_SWAMP_KEY = registerKey("tall_swamp");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ROOFED_VINED_KEY = registerKey("roofed_vined");
-
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEAD_KEY = registerKey("dead");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WEB_BUSH_KEY = registerKey("web_bush");
 
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context)
@@ -43,6 +51,14 @@ public class BppConfiguredFeatures
 
         register(context, ROOFED_VINED_KEY, Feature.TREE,
                 BppTrees.getDarkOakTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES, true));
+
+        register(context, WEB_BUSH_KEY, Feature.TREE,
+                BppTrees.getBush(Blocks.COBWEB, Blocks.COBWEB));
+    }
+
+    public static RandomPatchConfiguration grassPatch(BlockStateProvider blockStateProvider, int i)
+    {
+        return FeatureUtils.simpleRandomPatchConfiguration(i, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(blockStateProvider)));
     }
 
 

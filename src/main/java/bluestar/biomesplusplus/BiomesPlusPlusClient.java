@@ -11,7 +11,9 @@ import net.minecraft.world.level.FoliageColor;
 
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.level.GrassColor;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
+import net.minecraft.world.level.block.Block;
 
 import java.awt.*;
 
@@ -26,15 +28,36 @@ public class BiomesPlusPlusClient implements ClientModInitializer
         registerItemColors();
         BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.EUCALYPTUS_SAPLING, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.FANCY_BIRCH_SAPLING, RenderType.cutout());
+
     }
 
     private static void registerBlockColors()
     {
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) ->
-                pos != null && world != null ?
-                        GrassColor.get(0.5, 1.0) :
-                        FoliageColor.get(0.5, 1.0), BppBlocks.EUCALYPTUS_LEAVES);
+        registerLeafBlockColor(BppBlocks.EUCALYPTUS_LEAVES);
     }
+
+    private static void registerLeafBlockColor(Block block)
+    {
+        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> {
+            if (view == null || pos == null)
+            {
+                return GrassColor.get(0.5, 1.0);
+            }
+            return BiomeColors.getAverageFoliageColor(view, pos);
+        }, block);
+    }
+
+    private static void registerGrassBlockColor(Block block)
+    {
+        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> {
+            if (view == null || pos == null)
+            {
+                return GrassColor.get(0.5, 1.0);
+            }
+            return BiomeColors.getAverageGrassColor(view, pos);
+        }, block);
+    }
+
 
     private static void registerItemColors()
     {

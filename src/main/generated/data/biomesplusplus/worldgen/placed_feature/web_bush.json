@@ -1,9 +1,9 @@
 {
-  "feature": "biomesplusplus:eucalyptus",
+  "feature": "biomesplusplus:web_bush",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 35
+      "chance": 2
     },
     {
       "type": "minecraft:in_square"

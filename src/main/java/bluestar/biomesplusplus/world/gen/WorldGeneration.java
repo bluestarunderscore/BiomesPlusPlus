@@ -4,6 +4,6 @@ public class WorldGeneration
 {
     public static void generateWorldGen()
     {
-        TreeGeneration.generateTrees();
+        FeatureGeneration.generateTrees();
     }
 }

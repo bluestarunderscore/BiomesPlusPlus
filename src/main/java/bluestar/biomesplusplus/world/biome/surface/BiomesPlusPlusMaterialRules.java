@@ -30,7 +30,9 @@ public class BiomesPlusPlusMaterialRules
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
 
         SurfaceRules.RuleSource wastelandNoise = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(surfaceNoiseAbove(0.86D), SCORCHED_DIRT), SurfaceRules.ifTrue(surfaceNoiseAbove(0.41D), SCORCHED_COBBLESTONE), SCORCHED_STONE);
+                SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, 0.12, 4194304), SCORCHED_DIRT),
+                SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, 0.045, 4194304), SCORCHED_COBBLESTONE),
+                SCORCHED_STONE);
 
         //"Grass" is first arg, "dirt" is second for the below statement
         SurfaceRules.RuleSource stoneSurface = SurfaceRules.sequence(
@@ -49,22 +51,22 @@ public class BiomesPlusPlusMaterialRules
                 SurfaceRules.ifTrue(
                         SurfaceRules.ON_FLOOR,
                         SurfaceRules.sequence(
-                                SurfaceRules.ifTrue(
-                                        SurfaceRules.isBiome(BppBiomes.TALL_OAK_WETLAND),
                                         SurfaceRules.ifTrue(isAbove(62),
                                                 SurfaceRules.ifTrue(
                                                         SurfaceRules.not(isAbove(63)),
                                                         SurfaceRules.ifTrue(
-                                                                SurfaceRules.noiseCondition(Noises.SWAMP, 0.1D),
+                                                                SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D),
                                                                 makeStateRule(Blocks.WATER))
                                                         )
                                                 ))
-                        )));
+                        ));
 
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.STONE_BASIN), stoneSurface),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.WASTELAND), wastelandSurface),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.TALL_OAK_WETLAND), SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(0.9D), mudSurface),swampySurface)),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.TALL_OAK_WETLAND),
+                        SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, 0.1, 4194304), mudSurface),swampySurface)),
+
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.DARK_SWAMP), swampySurface),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.SILK_WETLAND), swampySurface));
 
@@ -75,11 +77,6 @@ public class BiomesPlusPlusMaterialRules
     private static SurfaceRules.RuleSource makeStateRule(Block block)
     {
         return SurfaceRules.state(block.defaultBlockState());
-    }
-
-    private static SurfaceRules.ConditionSource surfaceNoiseAbove(double noise)
-    {
-        return SurfaceRules.noiseCondition(Noises.SURFACE, noise / 9D, Double.MAX_VALUE);
     }
 
     private static SurfaceRules.ConditionSource isAbove(int y_level)

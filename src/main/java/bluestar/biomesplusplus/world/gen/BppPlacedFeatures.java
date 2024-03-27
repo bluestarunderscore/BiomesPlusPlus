@@ -15,6 +15,8 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
@@ -30,6 +32,8 @@ public class BppPlacedFeatures
     public static final ResourceKey<PlacedFeature> DEAD_KEY_PLACED = registerKey("dead");
     public static final ResourceKey<PlacedFeature> ROOFED_VINED_KEY_PLACED = registerKey("roofed_vined");
 
+    public static final ResourceKey<PlacedFeature> WEB_BUSH_KEY_PLACED = registerKey("web_bush");
+
 
     public static void bootstrap(BootstapContext<PlacedFeature> context)
     {
@@ -41,7 +45,7 @@ public class BppPlacedFeatures
                 VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(15),(Blocks.OAK_SAPLING)));
 
         register(context, EUCALYPTUS_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.EUCALYPTUS_KEY),
-                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(29),(Blocks.OAK_SAPLING)));
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(35),(Blocks.OAK_SAPLING)));
 
         register(context, TALL_SWAMP_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.TALL_SWAMP_KEY),
             VegetationPlacements.treePlacement(PlacementUtils.countExtra(9, 0.01f, 10),(Blocks.OAK_SAPLING)));
@@ -51,6 +55,9 @@ public class BppPlacedFeatures
 
         register(context, ROOFED_VINED_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.ROOFED_VINED_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(50, 0.01f, 1),(Blocks.OAK_SAPLING)));
+
+        register(context, WEB_BUSH_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.WEB_BUSH_KEY),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(2),(Blocks.OAK_SAPLING)));
 
     }
 

@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 
-public class TreeGeneration
+public class FeatureGeneration
 {
     public static void generateTrees()
     {
@@ -34,5 +34,9 @@ public class TreeGeneration
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.DARK_SWAMP),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.ROOFED_VINED_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.SILK_WETLAND),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.WEB_BUSH_KEY_PLACED);
     }
 }
