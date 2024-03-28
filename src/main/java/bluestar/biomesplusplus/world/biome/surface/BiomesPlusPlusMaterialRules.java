@@ -8,6 +8,8 @@ import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 
+import java.util.Random;
+
 public class BiomesPlusPlusMaterialRules
 {
     private static final SurfaceRules.RuleSource AIR = makeStateRule(Blocks.AIR);
@@ -23,8 +25,12 @@ public class BiomesPlusPlusMaterialRules
     private static final SurfaceRules.RuleSource SCORCHED_COBBLESTONE = makeStateRule(BppBlocks.SCORCHED_COBBLESTONE);
     private static final SurfaceRules.RuleSource SCORCHED_DIRT = makeStateRule(BppBlocks.SCORCHED_DIRT);
     private static final SurfaceRules.RuleSource COARSE_SCORCHED_DIRT = makeStateRule(BppBlocks.COARSE_SCORCHED_DIRT);
+    private static final SurfaceRules.RuleSource SANDSTONE = makeStateRule(Blocks.SANDSTONE);
+    private static final SurfaceRules.RuleSource RANGES_DIRT = makeStateRule(BppBlocks.RANGES_DIRT);
 
-    public static SurfaceRules.RuleSource makeRules() {
+    public static SurfaceRules.RuleSource makeRules()
+    {
+        Random rand = new Random();
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
 
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
@@ -33,6 +39,10 @@ public class BiomesPlusPlusMaterialRules
                 SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, 0.12, 4194304), SCORCHED_DIRT),
                 SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, 0.045, 4194304), SCORCHED_COBBLESTONE),
                 SCORCHED_STONE);
+
+        SurfaceRules.RuleSource sandstoneRangesNoise = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, 0.14, 4194304), RANGES_DIRT),
+                SANDSTONE);
 
         //"Grass" is first arg, "dirt" is second for the below statement
         SurfaceRules.RuleSource stoneSurface = SurfaceRules.sequence(
@@ -46,6 +56,10 @@ public class BiomesPlusPlusMaterialRules
         SurfaceRules.RuleSource wastelandSurface = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(isAbove(48), wastelandNoise)),
                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(isAbove(48), wastelandNoise)));
+
+        SurfaceRules.RuleSource sandstoneRangesSurface = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(isAbove(59), sandstoneRangesNoise)),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(isAbove(59), sandstoneRangesNoise)));
 
         SurfaceRules.RuleSource swampySurface = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(
@@ -68,7 +82,8 @@ public class BiomesPlusPlusMaterialRules
                         SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, 0.1, 4194304), mudSurface),swampySurface)),
 
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.DARK_SWAMP), swampySurface),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.SILK_WETLAND), swampySurface));
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.SILK_WETLAND), swampySurface),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.SANDSTONE_RANGES), sandstoneRangesSurface));
 
     }
 

@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "biomesplusplus:eucalyptus_planks"
+    "biomesplusplus:eucalyptus_planks",
+    "biomesplusplus:cypress_planks",
+    "biomesplusplus:end_planks",
+    "biomesplusplus:frozen_planks"
   ]
 }

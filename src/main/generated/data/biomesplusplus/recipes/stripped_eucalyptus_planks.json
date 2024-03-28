@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
+  "category": "building",
   "ingredients": [
     {
-      "item": "biomesplusplus:eucalyptus_wood"
+      "item": "biomesplusplus:stripped_eucalyptus_log"
     }
   ],
   "result": {

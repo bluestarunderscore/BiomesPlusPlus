@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "biomesplusplus:eucalyptus_trapdoor"
+    "biomesplusplus:eucalyptus_trapdoor",
+    "biomesplusplus:cypress_trapdoor",
+    "biomesplusplus:end_trapdoor",
+    "biomesplusplus:frozen_trapdoor"
   ]
 }

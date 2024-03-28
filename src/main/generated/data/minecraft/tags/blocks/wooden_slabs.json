@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "biomesplusplus:eucalyptus_slab"
+    "biomesplusplus:eucalyptus_slab",
+    "biomesplusplus:cypress_slab",
+    "biomesplusplus:end_slab",
+    "biomesplusplus:frozen_slab"
   ]
 }

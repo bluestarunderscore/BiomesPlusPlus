@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "biomesplusplus:eucalyptus_pressure_plate"
+    "biomesplusplus:eucalyptus_pressure_plate",
+    "biomesplusplus:cypress_pressure_plate",
+    "biomesplusplus:end_pressure_plate",
+    "biomesplusplus:frozen_pressure_plate"
   ]
 }

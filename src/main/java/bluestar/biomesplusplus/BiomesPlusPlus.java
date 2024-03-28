@@ -3,6 +3,7 @@ package bluestar.biomesplusplus;
 import bluestar.biomesplusplus.registry.BppRegistryLoader;
 import bluestar.biomesplusplus.world.biome.BiomesPlusPlusOverworldRegion;
 import bluestar.biomesplusplus.world.biome.surface.BiomesPlusPlusMaterialRules;
+import bluestar.biomesplusplus.world.gen.tree.custom.BppFoliagePlacerTypes;
 import bluestar.biomesplusplus.world.gen.tree.custom.BppTrunkPlacerTypes;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.ResourceLocation;
@@ -21,14 +22,13 @@ public class BiomesPlusPlus implements ModInitializer, TerraBlenderApi
 	public static final String REGISTRY_ID = "BiomesPlusPlus";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-
-
 	@Override
 	public void onInitialize()
 	{
 		BppRegistryLoader.loadCoreRegistries();
 		BppRegistryLoader.loadLevelRegistries();
 		BppTrunkPlacerTypes.init();
+		BppFoliagePlacerTypes.init();
 		LOGGER.info("BiomesPlusPlus loaded");
 	}
 

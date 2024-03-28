@@ -38,5 +38,29 @@ public class FeatureGeneration
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.SILK_WETLAND),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.WEB_BUSH_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.SILK_WETLAND, BppBiomes.TALL_OAK_WETLAND, BppBiomes.DARK_SWAMP, Biomes.SWAMP),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.CYPRESS_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.WINTRY_FIELD),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.FROZEN_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.DECIDUOUS_FOOTHILLS),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.OAK_PINE_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.DECIDUOUS_FOOTHILLS),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.OAK_BUSH_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.SANDSTONE_RANGES),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.TINY_OAK_BUSH_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.SANDSTONE_RANGES),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.EUCALYPTUS_RANGES_KEY_PLACED);
     }
 }

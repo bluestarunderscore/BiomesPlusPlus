@@ -4,6 +4,18 @@
     "biomesplusplus:eucalyptus_log",
     "biomesplusplus:eucalyptus_wood",
     "biomesplusplus:stripped_eucalyptus_log",
-    "biomesplusplus:stripped_eucalyptus_wood"
+    "biomesplusplus:stripped_eucalyptus_wood",
+    "biomesplusplus:cypress_log",
+    "biomesplusplus:cypress_wood",
+    "biomesplusplus:stripped_cypress_log",
+    "biomesplusplus:stripped_cypress_wood",
+    "biomesplusplus:end_log",
+    "biomesplusplus:end_wood",
+    "biomesplusplus:stripped_end_log",
+    "biomesplusplus:stripped_end_wood",
+    "biomesplusplus:frozen_log",
+    "biomesplusplus:frozen_wood",
+    "biomesplusplus:stripped_frozen_log",
+    "biomesplusplus:stripped_frozen_wood"
   ]
 }

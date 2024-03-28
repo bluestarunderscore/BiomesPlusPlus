@@ -28,12 +28,23 @@ public class BiomesPlusPlusClient implements ClientModInitializer
         registerItemColors();
         BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.EUCALYPTUS_SAPLING, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.FANCY_BIRCH_SAPLING, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.CYPRESS_SAPLING, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.END_SAPLING, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.FROZEN_SAPLING, RenderType.cutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.END_DOOR, RenderType.cutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.CYPRESS_TRAPDOOR, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.END_TRAPDOOR, RenderType.cutout());
+
 
     }
 
     private static void registerBlockColors()
     {
         registerLeafBlockColor(BppBlocks.EUCALYPTUS_LEAVES);
+        registerLeafBlockColor(BppBlocks.CYPRESS_LEAVES);
+        registerLeafBlockColor(BppBlocks.END_LEAVES);
     }
 
     private static void registerLeafBlockColor(Block block)
@@ -61,6 +72,9 @@ public class BiomesPlusPlusClient implements ClientModInitializer
 
     private static void registerItemColors()
     {
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 9619016, BppBlocks.EUCALYPTUS_LEAVES);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0x48b518, BppBlocks.EUCALYPTUS_LEAVES);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0x48b518, BppBlocks.CYPRESS_LEAVES);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 11228917, BppBlocks.END_LEAVES); //10309091
+
     }
 }

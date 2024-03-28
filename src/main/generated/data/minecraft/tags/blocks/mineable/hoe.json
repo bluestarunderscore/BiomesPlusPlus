@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "biomesplusplus:eucalyptus_leaves"
+    "biomesplusplus:eucalyptus_leaves",
+    "biomesplusplus:cypress_leaves",
+    "biomesplusplus:end_leaves",
+    "biomesplusplus:frozen_leaves"
   ]
 }

@@ -7,6 +7,8 @@
   "block.biomesplusplus.scorched_stone_slab" : "Scorched Stone Slab",
   "block.biomesplusplus.scorched_stone_stairs" : "Scorched Stone Stairs",
 
+  "block.biomesplusplus.ranges_dirt" : "Ranges Dirt",
+
   "block.biomesplusplus.scorched_cobblestone" : "Scorched Cobblestone",
   "block.biomesplusplus.scorched_cobblestone_slab" : "Scorched Cobblestone Slab",
   "block.biomesplusplus.scorched_cobblestone_stairs" : "Scorched Cobblestone Stairs",
@@ -35,6 +37,7 @@
   "block.biomesplusplus.eucalyptus_sapling" : "Eucalyptus Sapling",
   "block.biomesplusplus.end_sapling" : "End Sapling",
   "block.biomesplusplus.cypress_sapling" : "Cypress Sapling",
+  "block.biomesplusplus.frozen_sapling" : "Frozen Sapling",
 
   "block.biomesplusplus.eucalyptus_log" : "Eucalyptus Log",
   "block.biomesplusplus.eucalyptus_wood" : "Eucalyptus Wood",
@@ -79,5 +82,20 @@
   "block.biomesplusplus.cypress_button" : "Cypress Button",
   "block.biomesplusplus.cypress_pressure_plate" : "Cypress Pressure Plate",
   "block.biomesplusplus.cypress_trapdoor" : "Cypress Trapdoor",
-  "block.biomesplusplus.cypress_door" : "Cypress Door"
+  "block.biomesplusplus.cypress_door" : "Cypress Door",
+
+  "block.biomesplusplus.frozen_log" : "Frozen Log",
+  "block.biomesplusplus.frozen_wood" : "Frozen Wood",
+  "block.biomesplusplus.stripped_frozen_log" : "Stripped Frozen Log",
+  "block.biomesplusplus.stripped_frozen_wood" : "Stripped Frozen Wood",
+  "block.biomesplusplus.frozen_leaves" : "Frozen Leaves",
+  "block.biomesplusplus.frozen_planks" : "Frozen Planks",
+  "block.biomesplusplus.frozen_stairs" : "Frozen Stairs",
+  "block.biomesplusplus.frozen_slab" : "Frozen Slab",
+  "block.biomesplusplus.frozen_fence" : "Frozen Fence",
+  "block.biomesplusplus.frozen_fence_gate" : "Frozen Fence Gate",
+  "block.biomesplusplus.frozen_button" : "Frozen Button",
+  "block.biomesplusplus.frozen_pressure_plate" : "Frozen Pressure Plate",
+  "block.biomesplusplus.frozen_trapdoor" : "Frozen Trapdoor",
+  "block.biomesplusplus.frozen_door" : "Frozen Door"
 }

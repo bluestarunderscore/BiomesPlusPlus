@@ -33,9 +33,14 @@ public class BiomesPlusPlusOverworldRegion extends Region
             builder.replaceBiome(Biomes.DESERT, BppBiomes.WASTELAND);
             builder.replaceBiome(Biomes.DARK_FOREST, BppBiomes.DARK_SWAMP);
             builder.replaceBiome(Biomes.MANGROVE_SWAMP, BppBiomes.SILK_WETLAND);
-            //builder.replaceBiome(Biomes.BADLANDS, BppBiomes.SANDSTONE_RANGES);
+            builder.replaceBiome(Biomes.SNOWY_PLAINS, BppBiomes.WINTRY_FIELD);
+            builder.replaceBiome(Biomes.MEADOW, BppBiomes.DECIDUOUS_FOOTHILLS);
+
+            builder.replaceBiome(Biomes.ERODED_BADLANDS, BppBiomes.SANDSTONE_RANGES);
+            builder.replaceBiome(Biomes.WOODED_BADLANDS, BppBiomes.SANDSTONE_RANGES);
+            builder.replaceBiome(Biomes.BADLANDS, BppBiomes.SANDSTONE_RANGES);
             //builder.replaceBiome(Biomes.JUNGLE, BppBiomes.LUSH_FOREST;
-            //builder.replaceBiome(Biomes.SNOWY_PLAINS, BppBiomes.WINTRY_FIELD);
+
 
 
         });

@@ -31,6 +31,48 @@ public class BiomesPlusPlusGroup
                                 entries.accept(BppBlocks.EUCALYPTUS_PRESSURE_PLATE);
                                 entries.accept(BppBlocks.EUCALYPTUS_BUTTON);
 
+                                entries.accept(BppBlocks.CYPRESS_LOG);
+                                entries.accept(BppBlocks.CYPRESS_WOOD);
+                                entries.accept(BppBlocks.STRIPPED_CYPRESS_LOG);
+                                entries.accept(BppBlocks.STRIPPED_CYPRESS_WOOD);
+                                entries.accept(BppBlocks.CYPRESS_PLANKS);
+                                entries.accept(BppBlocks.CYPRESS_STAIRS);
+                                entries.accept(BppBlocks.CYPRESS_SLAB);
+                                entries.accept(BppBlocks.CYPRESS_FENCE);
+                                entries.accept(BppBlocks.CYPRESS_FENCE_GATE);
+                                entries.accept(BppBlocks.CYPRESS_DOOR);
+                                entries.accept(BppBlocks.CYPRESS_TRAPDOOR);
+                                entries.accept(BppBlocks.CYPRESS_PRESSURE_PLATE);
+                                entries.accept(BppBlocks.CYPRESS_BUTTON);
+
+                                entries.accept(BppBlocks.END_LOG);
+                                entries.accept(BppBlocks.END_WOOD);
+                                entries.accept(BppBlocks.STRIPPED_END_LOG);
+                                entries.accept(BppBlocks.STRIPPED_END_WOOD);
+                                entries.accept(BppBlocks.END_PLANKS);
+                                entries.accept(BppBlocks.END_STAIRS);
+                                entries.accept(BppBlocks.END_SLAB);
+                                entries.accept(BppBlocks.END_FENCE);
+                                entries.accept(BppBlocks.END_FENCE_GATE);
+                                entries.accept(BppBlocks.END_DOOR);
+                                entries.accept(BppBlocks.END_TRAPDOOR);
+                                entries.accept(BppBlocks.END_PRESSURE_PLATE);
+                                entries.accept(BppBlocks.END_BUTTON);
+
+                                entries.accept(BppBlocks.FROZEN_LOG);
+                                entries.accept(BppBlocks.FROZEN_WOOD);
+                                entries.accept(BppBlocks.STRIPPED_FROZEN_LOG);
+                                entries.accept(BppBlocks.STRIPPED_FROZEN_WOOD);
+                                entries.accept(BppBlocks.FROZEN_PLANKS);
+                                entries.accept(BppBlocks.FROZEN_STAIRS);
+                                entries.accept(BppBlocks.FROZEN_SLAB);
+                                entries.accept(BppBlocks.FROZEN_FENCE);
+                                entries.accept(BppBlocks.FROZEN_FENCE_GATE);
+                                entries.accept(BppBlocks.FROZEN_DOOR);
+                                entries.accept(BppBlocks.FROZEN_TRAPDOOR);
+                                entries.accept(BppBlocks.FROZEN_PRESSURE_PLATE);
+                                entries.accept(BppBlocks.FROZEN_BUTTON);
+
                                 entries.accept(BppBlocks.SCORCHED_STONE);
                                 entries.accept(BppBlocks.SCORCHED_STONE_STAIRS);
                                 entries.accept(BppBlocks.SCORCHED_STONE_SLAB);
@@ -59,9 +101,17 @@ public class BiomesPlusPlusGroup
 
                                 entries.accept(BppBlocks.SCORCHED_DIRT);
                                 entries.accept(BppBlocks.COARSE_SCORCHED_DIRT);
+                                entries.accept(BppBlocks.RANGES_DIRT);
 
                                 entries.accept(BppBlocks.EUCALYPTUS_LEAVES);
+                                entries.accept(BppBlocks.CYPRESS_LEAVES);
+                                entries.accept(BppBlocks.END_LEAVES);
+                                entries.accept(BppBlocks.FROZEN_LEAVES);
+
                                 entries.accept(BppBlocks.EUCALYPTUS_SAPLING);
+                                entries.accept(BppBlocks.CYPRESS_SAPLING);
+                                entries.accept(BppBlocks.END_SAPLING);
+                                entries.accept(BppBlocks.FROZEN_SAPLING);
                                 entries.accept(BppBlocks.FANCY_BIRCH_SAPLING);
                             }).build());
 

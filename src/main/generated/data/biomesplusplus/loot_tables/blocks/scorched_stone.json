@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "biomesplusplus:scorched_stone"
+          "name": "biomesplusplus:scorched_cobblestone"
         }
       ],
       "rolls": 1.0

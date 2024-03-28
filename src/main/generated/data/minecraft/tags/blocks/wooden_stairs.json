@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "biomesplusplus:eucalyptus_stairs"
+    "biomesplusplus:eucalyptus_stairs",
+    "biomesplusplus:cypress_stairs",
+    "biomesplusplus:end_stairs",
+    "biomesplusplus:frozen_stairs"
   ]
 }

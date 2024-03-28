@@ -8,6 +8,8 @@ public class BppPathable
     public static void registerPathBlocks()
     {
         //LOGS
-        FlattenableBlockRegistry.register(BppBlocks.SCORCHED_DIRT, Blocks.DIRT_PATH.defaultBlockState());
+        //FlattenableBlockRegistry.register(BppBlocks.SCORCHED_DIRT, Blocks.DIRT_PATH.defaultBlockState());
+
+        //FlattenableBlockRegistry.register(BppBlocks.RANGES_DIRT, Blocks.DIRT_PATH.defaultBlockState());
     }
 }

@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "biomesplusplus:eucalyptus_sapling",
-    "biomesplusplus:fancy_birch_sapling"
+    "biomesplusplus:fancy_birch_sapling",
+    "biomesplusplus:cypress_sapling",
+    "biomesplusplus:end_sapling",
+    "biomesplusplus:frozen_sapling"
   ]
 }

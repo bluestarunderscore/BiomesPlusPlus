@@ -1,15 +1,21 @@
 package bluestar.biomesplusplus.datagen;
 
+import bluestar.biomesplusplus.BiomesPlusPlus;
 import bluestar.biomesplusplus.block.BppBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.blockstates.BlockStateGenerator;
+import net.minecraft.data.models.model.ModelLocationUtils;
 import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.data.models.model.TexturedModel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+
+import java.util.function.Consumer;
 
 public class BppModelGenerator extends FabricModelProvider
 {
@@ -29,20 +35,48 @@ public class BppModelGenerator extends FabricModelProvider
                 .log(BppBlocks.STRIPPED_EUCALYPTUS_LOG)
                 .wood(BppBlocks.STRIPPED_EUCALYPTUS_WOOD);
 
-        //TODO: CREATE (BY HAND) MODELS FOR TINTED BLOCKS
-        generator.createTrivialBlock(BppBlocks.EUCALYPTUS_LEAVES, TexturedModel.LEAVES);
+        generator.woodProvider(BppBlocks.CYPRESS_LOG)
+                .log(BppBlocks.CYPRESS_LOG)
+                .wood(BppBlocks.CYPRESS_WOOD);
 
-        //generator.createTrivialCube(BppBlocks.SCORCHED_STONE);
-        //generator.createTrivialCube(BppBlocks.SCORCHED_COBBLESTONE);
-        //generator.createTrivialCube(BppBlocks.MOSSY_SCORCHED_COBBLESTONE);
-        //generator.createTrivialCube(BppBlocks.SCORCHED_STONE_BRICKS);
-        //generator.createTrivialCube(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS);
+        generator.woodProvider(BppBlocks.STRIPPED_CYPRESS_LOG)
+                .log(BppBlocks.STRIPPED_CYPRESS_LOG)
+                .wood(BppBlocks.STRIPPED_CYPRESS_WOOD);
+
+        generator.woodProvider(BppBlocks.END_LOG)
+                .log(BppBlocks.END_LOG)
+                .wood(BppBlocks.END_WOOD);
+
+        generator.woodProvider(BppBlocks.STRIPPED_END_LOG)
+                .log(BppBlocks.STRIPPED_END_LOG)
+                .wood(BppBlocks.STRIPPED_END_WOOD);
+
+        generator.woodProvider(BppBlocks.FROZEN_LOG)
+                .log(BppBlocks.FROZEN_LOG)
+                .wood(BppBlocks.FROZEN_WOOD);
+
+        generator.woodProvider(BppBlocks.STRIPPED_FROZEN_LOG)
+                .log(BppBlocks.STRIPPED_FROZEN_LOG)
+                .wood(BppBlocks.STRIPPED_FROZEN_WOOD);
+
+        generator.createTrivialBlock(BppBlocks.EUCALYPTUS_LEAVES, TexturedModel.LEAVES);
+        generator.createTrivialBlock(BppBlocks.CYPRESS_LEAVES, TexturedModel.LEAVES);
+        generator.createTrivialBlock(BppBlocks.END_LEAVES, TexturedModel.LEAVES);
+        generator.createTrivialBlock(BppBlocks.FROZEN_LEAVES, TexturedModel.LEAVES);
+
         generator.createTrivialCube(BppBlocks.CRACKED_SCORCHED_STONE_BRICKS);
         generator.createTrivialCube(BppBlocks.SCORCHED_DIRT);
         generator.createTrivialCube(BppBlocks.COARSE_SCORCHED_DIRT);
+        generator.createTrivialCube(BppBlocks.RANGES_DIRT);
+
+        //generator.createTrivialCube(BppBlocks.RANGES_DIRT_PATH);
+        //generator.createTrivialCube(BppBlocks.SCORCHED_DIRT_PATH);
 
         generator.createCrossBlockWithDefaultItem(BppBlocks.EUCALYPTUS_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
         generator.createCrossBlockWithDefaultItem(BppBlocks.FANCY_BIRCH_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
+        generator.createCrossBlockWithDefaultItem(BppBlocks.CYPRESS_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
+        generator.createCrossBlockWithDefaultItem(BppBlocks.END_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
+        generator.createCrossBlockWithDefaultItem(BppBlocks.FROZEN_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
 
         BlockModelGenerators.BlockFamilyProvider scorchedStonePool = generator.family(BppBlocks.SCORCHED_STONE);
         scorchedStonePool.slab(BppBlocks.SCORCHED_STONE_SLAB);
@@ -77,15 +111,44 @@ public class BppModelGenerator extends FabricModelProvider
         eucalyptusPool.button(BppBlocks.EUCALYPTUS_BUTTON);
         eucalyptusPool.pressurePlate(BppBlocks.EUCALYPTUS_PRESSURE_PLATE);
 
+        BlockModelGenerators.BlockFamilyProvider cypressPool = generator.family(BppBlocks.CYPRESS_PLANKS);
+        cypressPool.slab(BppBlocks.CYPRESS_SLAB);
+        cypressPool.stairs(BppBlocks.CYPRESS_STAIRS);
+        cypressPool.fence(BppBlocks.CYPRESS_FENCE);
+        cypressPool.fenceGate(BppBlocks.CYPRESS_FENCE_GATE);
+        cypressPool.button(BppBlocks.CYPRESS_BUTTON);
+        cypressPool.pressurePlate(BppBlocks.CYPRESS_PRESSURE_PLATE);
+
+        BlockModelGenerators.BlockFamilyProvider endPool = generator.family(BppBlocks.END_PLANKS);
+        endPool.slab(BppBlocks.END_SLAB);
+        endPool.stairs(BppBlocks.END_STAIRS);
+        endPool.fence(BppBlocks.END_FENCE);
+        endPool.fenceGate(BppBlocks.END_FENCE_GATE);
+        endPool.button(BppBlocks.END_BUTTON);
+        endPool.pressurePlate(BppBlocks.END_PRESSURE_PLATE);
+
+        BlockModelGenerators.BlockFamilyProvider frozenPool = generator.family(BppBlocks.FROZEN_PLANKS);
+        frozenPool.slab(BppBlocks.FROZEN_SLAB);
+        frozenPool.stairs(BppBlocks.FROZEN_STAIRS);
+        frozenPool.fence(BppBlocks.FROZEN_FENCE);
+        frozenPool.fenceGate(BppBlocks.FROZEN_FENCE_GATE);
+        frozenPool.button(BppBlocks.FROZEN_BUTTON);
+        frozenPool.pressurePlate(BppBlocks.FROZEN_PRESSURE_PLATE);
+
         generator.createDoor(BppBlocks.EUCALYPTUS_DOOR);
-        generator.createTrapdoor(BppBlocks.EUCALYPTUS_TRAPDOOR);
+        generator.createOrientableTrapdoor(BppBlocks.EUCALYPTUS_TRAPDOOR);
+        generator.createDoor(BppBlocks.CYPRESS_DOOR);
+        generator.createOrientableTrapdoor(BppBlocks.CYPRESS_TRAPDOOR);
+        generator.createDoor(BppBlocks.END_DOOR);
+        generator.createOrientableTrapdoor(BppBlocks.END_TRAPDOOR);
+        generator.createDoor(BppBlocks.FROZEN_DOOR);
+        generator.createOrientableTrapdoor(BppBlocks.FROZEN_TRAPDOOR);
 
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators generator)
     {
-        //generator.generateFlatItem(BppBlocks.FANCY_BIRCH_SAPLING.asItem(), ModelTemplates.FLAT_ITEM);
-        //generator.generateFlatItem(BppBlocks.EUCALYPTUS_SAPLING.asItem(), ModelTemplates.FLAT_ITEM);
+
     }
 }

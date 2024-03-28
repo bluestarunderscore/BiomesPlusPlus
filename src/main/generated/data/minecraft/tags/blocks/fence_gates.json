@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "biomesplusplus:eucalyptus_fence_gate"
+    "biomesplusplus:eucalyptus_fence_gate",
+    "biomesplusplus:cypress_fence_gate",
+    "biomesplusplus:end_fence_gate",
+    "biomesplusplus:frozen_fence_gate"
   ]
 }

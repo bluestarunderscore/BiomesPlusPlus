@@ -12,6 +12,10 @@ public class BppTags
     public static class Blocks
     {
         public static final TagKey<Block> EUCALYPTUS_LOGS = createTag("eucalyptus_logs");
+        public static final TagKey<Block> CYPRESS_LOGS = createTag("cypress_logs");
+        public static final TagKey<Block> END_LOGS = createTag("end_logs");
+        public static final TagKey<Block> FROZEN_LOGS = createTag("frozen_logs");
+
 
         public static TagKey<Block> createTag(String name)
         {
@@ -22,6 +26,9 @@ public class BppTags
     public static class Items
     {
         public static final TagKey<Item> EUCALYPTUS_LOGS = createTag("eucalyptus_logs");
+        public static final TagKey<Item> CYPRESS_LOGS = createTag("cypress_logs");
+        public static final TagKey<Item> END_LOGS = createTag("end_logs");
+        public static final TagKey<Item> FROZEN_LOGS = createTag("frozen_logs");
 
         public static TagKey<Item> createTag(String name)
         {
