@@ -23,10 +23,8 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TrunkVineDecorator;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.*;
 
 import java.util.OptionalInt;
 
@@ -89,18 +87,41 @@ public class BppTrees
                 .build();
     }
 
-    public static TreeConfiguration getDarkOakTree(Block log, Block leaves, boolean hasVines)
+    public static TreeConfiguration getDarkOakTree(int height, int variation, Block log, Block leaves, boolean hasVines)
     {
-        return new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(log),
-                new DarkOakTrunkPlacer(6, 2, 1),
-                BlockStateProvider.simple(leaves),
-                new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
-                new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty()))
-                .decorators(ImmutableList.of(new LeaveVineDecorator(0.31f))).build();
+        if(hasVines)
+        {
+            return new TreeConfiguration.TreeConfigurationBuilder(
+                    BlockStateProvider.simple(log),
+                    new DarkOakTrunkPlacer(height, variation, 1),
+                    BlockStateProvider.simple(leaves),
+                    new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+                    new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty()))
+                    .decorators(ImmutableList.of(new LeaveVineDecorator(0.31f))).build();
+        }
+        else
+        {
+            return new TreeConfiguration.TreeConfigurationBuilder(
+                    BlockStateProvider.simple(log),
+                    new DarkOakTrunkPlacer(height, variation, 1),
+                    BlockStateProvider.simple(leaves),
+                    new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+                    new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty()))
+                    .build();
+        }
 
     }
 
+    public static TreeConfiguration getJungleTree(int height, int variation, Block log, Block leaves)
+    {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(log), new MegaJungleTrunkPlacer(height, variation, 19),
+                BlockStateProvider.simple(Blocks.JUNGLE_LEAVES),
+                new MegaJungleFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
+                new TwoLayersFeatureSize(1, 1, 2)).decorators(ImmutableList.of(TrunkVineDecorator.INSTANCE,
+                new LeaveVineDecorator(0.23f))).build();
+
+    }
     public static TreeConfiguration getSpruceTree(Block log, Block leaves)
     {
         return new TreeConfiguration.TreeConfigurationBuilder(

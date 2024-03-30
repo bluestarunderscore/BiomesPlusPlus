@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "L": {
+      "item": "biomesplusplus:cypress_log"
+    }
+  },
+  "pattern": [
+    "LL ",
+    "LL "
+  ],
+  "result": {
+    "count": 3,
+    "item": "biomesplusplus:cypress_wood"
+  }
+}

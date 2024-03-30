@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "biomesplusplus:cypress_log",
+    "biomesplusplus:stripped_cypress_log",
+    "biomesplusplus:cypress_wood",
+    "biomesplusplus:stripped_cypress_wood"
+  ]
+}

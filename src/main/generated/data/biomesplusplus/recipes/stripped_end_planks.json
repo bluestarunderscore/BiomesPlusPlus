@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "biomesplusplus:stripped_end_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "biomesplusplus:end_planks"
+  }
+}

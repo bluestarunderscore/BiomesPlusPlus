@@ -36,11 +36,14 @@ public class BppConfiguredFeatures
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> WEB_BUSH_KEY = registerKey("web_bush");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OAK_BUSH_KEY = registerKey("oak_bush");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> END_BUSH_KEY = registerKey("end_bush");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> OAK_PINE_KEY = registerKey("oak_pine");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TINY_OAK_BUSH_KEY = registerKey("tiny_oak_bush");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> TINY_END_BUSH_KEY = registerKey("tiny_end_bush");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DARK_END_KEY = registerKey("dark_end");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> JUNGLE_END_KEY = registerKey("jungle_end");
 
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context)
@@ -61,10 +64,13 @@ public class BppConfiguredFeatures
                 BppTrees.getStandardFancyTree(Blocks.DARK_OAK_LOG, Blocks.AIR));
 
         register(context, ROOFED_VINED_KEY, Feature.TREE,
-                BppTrees.getDarkOakTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES, true));
+                BppTrees.getDarkOakTree(6, 2, Blocks.OAK_LOG, Blocks.OAK_LEAVES, true));
 
         register(context, WEB_BUSH_KEY, Feature.TREE,
                 BppTrees.getBush(Blocks.COBWEB, Blocks.COBWEB));
+
+        register(context, END_BUSH_KEY, Feature.TREE,
+                BppTrees.getBush(BppBlocks.END_LOG, BppBlocks.END_LEAVES));
 
         register(context, CYPRESS_KEY, Feature.TREE,
                 BppTrees.getSwampTree(BppBlocks.CYPRESS_LOG, BppBlocks.CYPRESS_LEAVES, 7, 3, false));
@@ -83,6 +89,12 @@ public class BppConfiguredFeatures
 
         register(context, TINY_END_BUSH_KEY, Feature.TREE,
                 BppTrees.getTinyBush(BppBlocks.END_LOG, BppBlocks.END_LEAVES));
+
+        register(context, DARK_END_KEY, Feature.TREE,
+                BppTrees.getDarkOakTree(16, 5, BppBlocks.END_LOG, BppBlocks.END_LEAVES, false));
+
+        register(context, JUNGLE_END_KEY, Feature.TREE,
+                BppTrees.getJungleTree(14, 3, BppBlocks.END_LOG, BppBlocks.END_LEAVES));
 
     }
 

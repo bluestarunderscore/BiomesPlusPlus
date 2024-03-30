@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "biomesplusplus:block/end_slab"
+    },
+    "type=double": {
+      "model": "biomesplusplus:block/end_planks"
+    },
+    "type=top": {
+      "model": "biomesplusplus:block/end_slab_top"
+    }
+  }
+}

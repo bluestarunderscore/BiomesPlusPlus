@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "biomesplusplus:scorched_stone"
+  },
+  "result": "biomesplusplus:scorched_stone_slab"
+}

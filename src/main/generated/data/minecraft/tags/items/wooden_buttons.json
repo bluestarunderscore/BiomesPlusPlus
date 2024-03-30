@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "biomesplusplus:eucalyptus_button",
+    "biomesplusplus:cypress_button",
+    "biomesplusplus:end_button",
+    "biomesplusplus:frozen_button"
+  ]
+}

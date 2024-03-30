@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "biomesplusplus:mossy_scorched_stone_bricks"
+  },
+  "result": "biomesplusplus:mossy_scorched_stone_brick_slab"
+}

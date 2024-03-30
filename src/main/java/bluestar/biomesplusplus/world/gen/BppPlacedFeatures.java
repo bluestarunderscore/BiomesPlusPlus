@@ -32,18 +32,16 @@ public class BppPlacedFeatures
     public static final ResourceKey<PlacedFeature> TALL_SWAMP_KEY_PLACED = registerKey("tall_swamp");
     public static final ResourceKey<PlacedFeature> DEAD_KEY_PLACED = registerKey("dead");
     public static final ResourceKey<PlacedFeature> ROOFED_VINED_KEY_PLACED = registerKey("roofed_vined");
-
     public static final ResourceKey<PlacedFeature> CYPRESS_KEY_PLACED = registerKey("cypress");
     public static final ResourceKey<PlacedFeature> FROZEN_KEY_PLACED = registerKey("frozen");
-
     public static final ResourceKey<PlacedFeature> WEB_BUSH_KEY_PLACED = registerKey("web_bush");
     public static final ResourceKey<PlacedFeature> OAK_BUSH_KEY_PLACED = registerKey("oak_bush");
-
+    public static final ResourceKey<PlacedFeature> END_BUSH_KEY_PLACED = registerKey("end_bush");
     public static final ResourceKey<PlacedFeature> OAK_PINE_KEY_PLACED = registerKey("oak_pine");
-
     public static final ResourceKey<PlacedFeature> TINY_END_BUSH_KEY_PLACED = registerKey("tiny_end_bush");
-
     public static final ResourceKey<PlacedFeature> TINY_OAK_BUSH_KEY_PLACED = registerKey("tiny_oak_bush");
+    public static final ResourceKey<PlacedFeature> DARK_END_KEY_PLACED = registerKey("dark_end");
+    public static final ResourceKey<PlacedFeature> JUNGLE_END_KEY_PLACED = registerKey("jungle_end");
 
 
     public static void bootstrap(BootstapContext<PlacedFeature> context)
@@ -85,11 +83,20 @@ public class BppPlacedFeatures
         register(context, OAK_BUSH_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.OAK_BUSH_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.01f, 1),(Blocks.OAK_SAPLING)));
 
+        register(context, END_BUSH_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.END_BUSH_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.01f, 1),(Blocks.OAK_SAPLING)));
+
         register(context, TINY_OAK_BUSH_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.TINY_OAK_BUSH_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.01f, 1),(Blocks.OAK_SAPLING)));
 
         register(context, TINY_END_BUSH_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.TINY_END_BUSH_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.01f, 1),(Blocks.OAK_SAPLING)));
+
+        register(context, DARK_END_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.DARK_END_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(40, 0.01f, 1),(Blocks.OAK_SAPLING)));
+
+        register(context, JUNGLE_END_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.JUNGLE_END_KEY),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(8),(Blocks.OAK_SAPLING)));
 
     }
 

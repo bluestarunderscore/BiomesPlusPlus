@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "biomesplusplus:block/end_leaves"
+  }
+}

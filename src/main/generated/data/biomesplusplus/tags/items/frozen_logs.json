@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "biomesplusplus:frozen_log",
+    "biomesplusplus:frozen_wood",
+    "biomesplusplus:stripped_frozen_log",
+    "biomesplusplus:stripped_frozen_wood"
+  ]
+}

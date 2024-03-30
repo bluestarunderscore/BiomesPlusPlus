@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "biomesplusplus:frozen_wood"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "biomesplusplus:frozen_planks"
+  }
+}

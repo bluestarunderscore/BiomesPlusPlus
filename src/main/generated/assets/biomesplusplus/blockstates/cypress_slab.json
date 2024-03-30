@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "biomesplusplus:block/cypress_slab"
+    },
+    "type=double": {
+      "model": "biomesplusplus:block/cypress_planks"
+    },
+    "type=top": {
+      "model": "biomesplusplus:block/cypress_slab_top"
+    }
+  }
+}

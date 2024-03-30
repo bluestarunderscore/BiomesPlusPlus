@@ -1,7 +1,8 @@
 package bluestar.biomesplusplus;
 
 import bluestar.biomesplusplus.registry.BppRegistryLoader;
-import bluestar.biomesplusplus.world.biome.BiomesPlusPlusOverworldRegion;
+import bluestar.biomesplusplus.world.biome.BppOverworldRegion;
+import bluestar.biomesplusplus.world.biome.BppOverworldRegionRare;
 import bluestar.biomesplusplus.world.biome.surface.BiomesPlusPlusMaterialRules;
 import bluestar.biomesplusplus.world.gen.tree.custom.BppFoliagePlacerTypes;
 import bluestar.biomesplusplus.world.gen.tree.custom.BppTrunkPlacerTypes;
@@ -35,8 +36,8 @@ public class BiomesPlusPlus implements ModInitializer, TerraBlenderApi
 	@Override
 	public void onTerraBlenderInitialized()
 	{
-		Regions.register(new BiomesPlusPlusOverworldRegion(new ResourceLocation(MOD_ID, "overworld"), 5));
-
+		Regions.register(new BppOverworldRegion(new ResourceLocation(MOD_ID, "overworld"), 5));
+		Regions.register(new BppOverworldRegionRare(new ResourceLocation(MOD_ID, "overworld_rare"), 3));
 		SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, BiomesPlusPlusMaterialRules.makeRules());
 	}
 }

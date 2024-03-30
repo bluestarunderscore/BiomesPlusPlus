@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "biomesplusplus:eucalyptus_door",
+    "biomesplusplus:cypress_door",
+    "biomesplusplus:end_door",
+    "biomesplusplus:frozen_door"
+  ]
+}

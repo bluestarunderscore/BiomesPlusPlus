@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "biomesplusplus:end_log",
+    "biomesplusplus:end_wood",
+    "biomesplusplus:stripped_end_log",
+    "biomesplusplus:stripped_end_wood"
+  ]
+}

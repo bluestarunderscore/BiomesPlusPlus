@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "biomesplusplus:block/frozen_planks",
+    "side": "biomesplusplus:block/frozen_planks",
+    "top": "biomesplusplus:block/frozen_planks"
+  }
+}

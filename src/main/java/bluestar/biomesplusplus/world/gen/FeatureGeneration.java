@@ -62,5 +62,13 @@ public class FeatureGeneration
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.SANDSTONE_RANGES),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.EUCALYPTUS_RANGES_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.ENDER_FOREST),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.DARK_END_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.ENDER_FOREST),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.JUNGLE_END_KEY_PLACED);
     }
 }

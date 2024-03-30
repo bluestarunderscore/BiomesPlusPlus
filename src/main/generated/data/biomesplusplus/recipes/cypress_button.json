@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "biomesplusplus:cypress_planks"
+    }
+  ],
+  "result": {
+    "item": "biomesplusplus:cypress_button"
+  }
+}
