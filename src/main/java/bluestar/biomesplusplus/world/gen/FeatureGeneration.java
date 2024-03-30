@@ -14,9 +14,13 @@ public class FeatureGeneration
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.TALL_OAK_KEY_PLACED);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.RIVER, Biomes.FROZEN_RIVER),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.RIVER, Biomes.FROZEN_RIVER, Biomes.BIRCH_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.FANCY_BIRCH_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.MAGIC_FOREST),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.MAGIC_OAK_KEY_PLACED);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.PLAINS, Biomes.SAVANNA, Biomes.WINDSWEPT_SAVANNA,
                         Biomes.SAVANNA_PLATEAU, Biomes.MEADOW),
@@ -27,7 +31,7 @@ public class FeatureGeneration
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.TALL_SWAMP_KEY_PLACED);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.WASTELAND, BppBiomes.SILK_WETLAND),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.WASTELAND, BppBiomes.SILK_WETLAND, Biomes.WOODED_BADLANDS),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.DEAD_KEY_PLACED);
 
@@ -51,7 +55,7 @@ public class FeatureGeneration
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.OAK_PINE_KEY_PLACED);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.DECIDUOUS_FOOTHILLS),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.DECIDUOUS_FOOTHILLS, BppBiomes.MAGIC_FOREST),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.OAK_BUSH_KEY_PLACED);
 
@@ -70,5 +74,9 @@ public class FeatureGeneration
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.ENDER_FOREST),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.JUNGLE_END_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.ENDER_FOREST),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.END_BUSH_KEY_PLACED);
     }
 }

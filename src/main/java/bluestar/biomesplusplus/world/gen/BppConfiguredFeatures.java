@@ -26,6 +26,7 @@ public class BppConfiguredFeatures
 {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_OAK_KEY = registerKey("tall_oak");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MAGIC_OAK_KEY = registerKey("magic_oak");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_BIRCH_KEY = registerKey("fancy_birch");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EUCALYPTUS_KEY = registerKey("eucalyptus");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_SWAMP_KEY = registerKey("tall_swamp");
@@ -95,6 +96,9 @@ public class BppConfiguredFeatures
 
         register(context, JUNGLE_END_KEY, Feature.TREE,
                 BppTrees.getJungleTree(14, 3, BppBlocks.END_LOG, BppBlocks.END_LEAVES));
+
+        register(context, MAGIC_OAK_KEY, Feature.TREE,
+                BppTrees.getCherryTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES));
 
     }
 

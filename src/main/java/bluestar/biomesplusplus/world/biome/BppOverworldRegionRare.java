@@ -28,7 +28,7 @@ public class BppOverworldRegionRare extends Region
         {
             builder.replaceBiome(Biomes.MANGROVE_SWAMP, BppBiomes.SILK_WETLAND);
             builder.replaceBiome(Biomes.DARK_FOREST, BppBiomes.ENDER_FOREST);
-            //builder.replaceBiome(Biomes.FOREST, BppBiomes.MAGIC_FOREST);
+            builder.replaceBiome(Biomes.FOREST, BppBiomes.MAGIC_FOREST);
         });
     }
 }

@@ -69,9 +69,6 @@ public class BppModelGenerator extends FabricModelProvider
         generator.createTrivialCube(BppBlocks.COARSE_SCORCHED_DIRT);
         generator.createTrivialCube(BppBlocks.RANGES_DIRT);
 
-        //generator.createTrivialCube(BppBlocks.RANGES_DIRT_PATH);
-        //generator.createTrivialCube(BppBlocks.SCORCHED_DIRT_PATH);
-
         generator.createCrossBlockWithDefaultItem(BppBlocks.EUCALYPTUS_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
         generator.createCrossBlockWithDefaultItem(BppBlocks.FANCY_BIRCH_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
         generator.createCrossBlockWithDefaultItem(BppBlocks.CYPRESS_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);

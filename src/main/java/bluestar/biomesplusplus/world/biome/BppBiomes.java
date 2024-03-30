@@ -45,6 +45,7 @@ public class BppBiomes
     //release
     public static final ResourceKey<Biome> DECIDUOUS_FOOTHILLS = registerBiomeKey("deciduous_foothills");
     public static final ResourceKey<Biome> ENDER_FOREST = registerBiomeKey("ender_forest");
+    public static final ResourceKey<Biome> MAGIC_FOREST = registerBiomeKey("magic_forest");
 
     public static void bootstrap(BootstapContext<Biome> context)
     {
@@ -59,7 +60,8 @@ public class BppBiomes
         context.register(SANDSTONE_RANGES, sandstoneRanges(context));
 
         context.register(DECIDUOUS_FOOTHILLS, deciduousFoothills(context));
-        context.register(ENDER_FOREST, deciduousFoothills(context));
+        context.register(ENDER_FOREST, enderForest(context));
+        context.register(MAGIC_FOREST, magicForest(context));
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder)
@@ -168,6 +170,7 @@ public class BppBiomes
     {
         BiomesPlusPlus.LOGGER.info("Init default biome features for bpp enderForest");
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
         BiomeDefaultFeatures.caveSpawns(spawnBuilder);
 
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SPIDER, 10, 4, 4));
@@ -199,14 +202,62 @@ public class BppBiomes
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
                 .specialEffects((new BiomeSpecialEffects.Builder())
-                        .waterColor(0xC0F786)
-                        .waterFogColor(0x60754a)
-                        .grassColorOverride(0x00B39B)
-                        .foliageColorOverride(0x00B39B)
+                        .waterColor(0x632d8f)
+                        .waterFogColor(0x401d5d)
+                        .grassColorOverride(0x9a64f2)
+                        .foliageColorOverride(11228917)
                         .skyColor(0xF0D8F2)
                         .fogColor(12638463)
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                        .backgroundMusic(DESERT_MUSIC)
+                        .backgroundMusic(FOREST_MUSIC)
+                        .build())
+                .build();
+    }
+
+    public static Biome magicForest(BootstapContext<Biome> context)
+    {
+        BiomesPlusPlus.LOGGER.info("Init default biome features for bpp magicForest");
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.caveSpawns(spawnBuilder);
+
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SPIDER, 100, 4, 4));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ZOMBIE, 85, 4, 4));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ZOMBIE_VILLAGER, 3, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SKELETON, 85, 4, 4));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.CREEPER, 85, 4, 4));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 100, 4, 4));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 50, 3, 4));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.WITCH, 100, 3, 3));
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE),
+                        context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addForestGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.8F)
+                .temperature(0.7F)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(BppBiomeColors.DEFAULT_WATER_COLOR)
+                        .waterFogColor(BppBiomeColors.DEFAULT_WATER_FOG_COLOR)
+                        .grassColorOverride(0x80D9C3)
+                        .foliageColorOverride(0x9EC4DE)
+                        .skyColor(0xB8EEF5)
+                        .fogColor(12638463)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .backgroundMusic(FOREST_MUSIC)
                         .build())
                 .build();
     }

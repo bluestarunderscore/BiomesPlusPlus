@@ -17,11 +17,8 @@ public class BppLootTableGenerator extends FabricBlockLootTableProvider
     {
         //Wasteland blocks
         dropSelf(BppBlocks.SCORCHED_DIRT);
-        //dropSelf(BppBlocks.SCORCHED_DIRT_PATH);
         dropSelf(BppBlocks.RANGES_DIRT);
-        //dropSelf(BppBlocks.RANGES_DIRT_PATH);
         dropSelf(BppBlocks.COARSE_SCORCHED_DIRT);
-
         dropSelf(BppBlocks.SCORCHED_COBBLESTONE);
         dropSelf(BppBlocks.SCORCHED_COBBLESTONE_STAIRS);
         dropSelf(BppBlocks.SCORCHED_COBBLESTONE_WALL);
@@ -38,17 +35,20 @@ public class BppLootTableGenerator extends FabricBlockLootTableProvider
         dropSelf(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_STAIRS);
         dropSelf(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_WALL);
 
+        //Saplings
         dropSelf(BppBlocks.EUCALYPTUS_SAPLING);
         dropSelf(BppBlocks.FANCY_BIRCH_SAPLING);
         dropSelf(BppBlocks.CYPRESS_SAPLING);
         dropSelf(BppBlocks.END_SAPLING);
         dropSelf(BppBlocks.FROZEN_SAPLING);
 
+        //Leaf blocks
         add(BppBlocks.EUCALYPTUS_LEAVES, createLeavesDrops(BppBlocks.EUCALYPTUS_LEAVES, BppBlocks.EUCALYPTUS_SAPLING, 0.05f, 0.0025f, 0.083333336f, 0.1f));
         add(BppBlocks.CYPRESS_LEAVES, createLeavesDrops(BppBlocks.CYPRESS_LEAVES, BppBlocks.CYPRESS_SAPLING, 0.05f, 0.0025f, 0.083333336f, 0.1f));
         add(BppBlocks.END_LEAVES, createLeavesDrops(BppBlocks.END_LEAVES, BppBlocks.END_SAPLING, 0.05f, 0.0025f, 0.083333336f, 0.1f));
         add(BppBlocks.FROZEN_LEAVES, createLeavesDrops(BppBlocks.FROZEN_LEAVES, BppBlocks.FROZEN_SAPLING, 0.05f, 0.0025f, 0.083333336f, 0.1f));
 
+        //Other tree blocks
         dropSelf(BppBlocks.EUCALYPTUS_LOG);
         dropSelf(BppBlocks.STRIPPED_EUCALYPTUS_LOG);
         dropSelf(BppBlocks.CYPRESS_LOG);

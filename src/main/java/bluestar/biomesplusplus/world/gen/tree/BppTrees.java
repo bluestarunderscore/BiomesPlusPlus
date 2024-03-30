@@ -7,8 +7,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.util.valueproviders.WeightedListInt;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -161,6 +163,16 @@ public class BppTrees
                 BlockStateProvider.simple(leaves),
                 new FiveBlockFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1)),
                 new TwoLayersFeatureSize(0,0,0)).build();
+    }
+
+    public static TreeConfiguration getCherryTree(Block log, Block leaves)
+    {
+       return new TreeConfiguration.TreeConfigurationBuilder(
+               BlockStateProvider.simple(log),
+               new CherryTrunkPlacer(7,1,0, ConstantInt.of(3), UniformInt.of(2,4), UniformInt.of(-4,-3), UniformInt.of(-1,0)),
+               BlockStateProvider.simple(leaves), new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25f, 0.5f, 0.16666667f, 0.33333334f),
+                       new TwoLayersFeatureSize(1, 0, 2)).ignoreVines().build();
+
     }
 
 }
