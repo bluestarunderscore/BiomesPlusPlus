@@ -118,7 +118,7 @@ public class BppTrees
     {
         return new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(log), new MegaJungleTrunkPlacer(height, variation, 19),
-                BlockStateProvider.simple(Blocks.JUNGLE_LEAVES),
+                BlockStateProvider.simple(leaves),
                 new MegaJungleFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
                 new TwoLayersFeatureSize(1, 1, 2)).decorators(ImmutableList.of(TrunkVineDecorator.INSTANCE,
                 new LeaveVineDecorator(0.23f))).build();

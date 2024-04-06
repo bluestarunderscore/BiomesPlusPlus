@@ -1,6 +1,18 @@
 {
   "itemgroup.biomesplusplus" : "Biomes++",
 
+  "biome.biomesplusplus.dark_swamp" : "Dark Swamp",
+  "biome.biomesplusplus.deciduous_foothills" : "Deciduous Foothills",
+  "biome.biomesplusplus.ender_forest" : "Ender Forest",
+  "biome.biomesplusplus.magic_forest" : "Magic Forest",
+  "biome.biomesplusplus.sandstone_ranges" : "Sandstone Ranges",
+  "biome.biomesplusplus.silk_wetland" : "Silk Wetland",
+  "biome.biomesplusplus.stone_basin" : "Stone Basin",
+  "biome.biomesplusplus.tall_oak_forest" : "Tall Oak Forest",
+  "biome.biomesplusplus.tall_oak_wetland" : "Tall Oak Wetland",
+  "biome.biomesplusplus.wasteland" : "Wasteland",
+  "biome.biomesplusplus.wintry_field" : "Wintry Field",
+
   "block.biomesplusplus.scorched_dirt" : "Scorched Dirt",
   "block.biomesplusplus.coarse_scorched_dirt" : "Coarse Scorched Dirt",
   "block.biomesplusplus.scorched_stone" : "Scorched Stone",
