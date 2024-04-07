@@ -32,10 +32,15 @@ public class BiomesPlusPlusClient implements ClientModInitializer
         BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.END_SAPLING, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.FROZEN_SAPLING, RenderType.cutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.EUCALYPTUS_DOOR, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.CYPRESS_DOOR, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.END_DOOR, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.FROZEN_DOOR, RenderType.cutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.EUCALYPTUS_TRAPDOOR, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.CYPRESS_TRAPDOOR, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.END_TRAPDOOR, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.FROZEN_TRAPDOOR, RenderType.cutout());
 
 
     }
