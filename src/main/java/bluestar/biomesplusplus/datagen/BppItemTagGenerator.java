@@ -124,5 +124,12 @@ public class BppItemTagGenerator extends FabricTagProvider.ItemTagProvider
                 .add(BppBlocks.FROZEN_WOOD.asItem())
                 .add(BppBlocks.STRIPPED_FROZEN_LOG.asItem())
                 .add(BppBlocks.STRIPPED_FROZEN_WOOD.asItem());
+
+        getOrCreateTagBuilder(ItemTags.SAPLINGS)
+                .add(BppBlocks.EUCALYPTUS_SAPLING.asItem())
+                .add(BppBlocks.CYPRESS_SAPLING.asItem())
+                .add(BppBlocks.END_SAPLING.asItem())
+                .add(BppBlocks.FROZEN_SAPLING.asItem())
+                .add(BppBlocks.FANCY_BIRCH_SAPLING.asItem());
     }
 }

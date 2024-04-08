@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -82,6 +83,10 @@ public class BppBlockTagGenerator extends FabricTagProvider.BlockTagProvider
                 .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_SLAB)
                 .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_STAIRS)
                 .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_WALL);
+
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
+                .add(BppBlocks.HUGE_CYAN_MUSHROOM)
+                .add(BppBlocks.HUGE_PURPLE_MUSHROOM);
 
         getOrCreateTagBuilder(BlockTags.LOGS)
                 .add(BppBlocks.EUCALYPTUS_LOG)
@@ -217,5 +222,11 @@ public class BppBlockTagGenerator extends FabricTagProvider.BlockTagProvider
                 .add(BppBlocks.FROZEN_WOOD)
                 .add(BppBlocks.STRIPPED_FROZEN_WOOD);
 
+        getOrCreateTagBuilder(BlockTags.SAPLINGS)
+                .add(BppBlocks.EUCALYPTUS_SAPLING)
+                .add(BppBlocks.CYPRESS_SAPLING)
+                .add(BppBlocks.END_SAPLING)
+                .add(BppBlocks.FROZEN_SAPLING)
+                .add(BppBlocks.FANCY_BIRCH_SAPLING);
     }
 }

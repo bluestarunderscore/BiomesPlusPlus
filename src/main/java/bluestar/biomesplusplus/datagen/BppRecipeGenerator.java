@@ -54,6 +54,21 @@ public class BppRecipeGenerator extends FabricRecipeProvider
         BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.DECORATIONS, BppBlocks.MOSSY_SCORCHED_COBBLESTONE_WALL, BppBlocks.MOSSY_SCORCHED_COBBLESTONE);
 
 
+        //MOSSY COBBLE
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_COBBLESTONE, 4).requires(BppBlocks.SCORCHED_COBBLESTONE).requires(Blocks.MOSS_BLOCK)
+                .unlockedBy(getHasName(BppBlocks.SCORCHED_COBBLESTONE), FabricRecipeProvider.has(BppBlocks.SCORCHED_COBBLESTONE))
+                .save(exporter, new ResourceLocation("mossy_scorched_cobblestone_moss"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_COBBLESTONE, 4).requires(BppBlocks.SCORCHED_COBBLESTONE).requires(Blocks.VINE)
+                .unlockedBy(getHasName(BppBlocks.SCORCHED_COBBLESTONE), FabricRecipeProvider.has(BppBlocks.SCORCHED_COBBLESTONE))
+                .save(exporter, new ResourceLocation("mossy_scorched_cobblestone_vine"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_STONE_BRICKS, 4).requires(BppBlocks.SCORCHED_STONE_BRICKS).requires(Blocks.MOSS_BLOCK)
+                .unlockedBy(getHasName(BppBlocks.SCORCHED_STONE_BRICKS), FabricRecipeProvider.has(BppBlocks.SCORCHED_STONE_BRICKS))
+                .save(exporter, new ResourceLocation("mossy_scorched_stone_brick_moss"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_STONE_BRICKS, 4).requires(BppBlocks.SCORCHED_STONE_BRICKS).requires(Blocks.VINE)
+                .unlockedBy(getHasName(BppBlocks.SCORCHED_STONE_BRICKS), FabricRecipeProvider.has(BppBlocks.SCORCHED_STONE_BRICKS))
+                .save(exporter, new ResourceLocation("mossy_scorched_stone_brick_vine"));
+
         //STONE SLABS
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.SCORCHED_STONE_SLAB, 6)
                 .pattern("PPP").define('P', BppBlocks.SCORCHED_STONE).unlockedBy(getHasName(BppBlocks.SCORCHED_STONE), has(BppBlocks.SCORCHED_STONE_SLAB))

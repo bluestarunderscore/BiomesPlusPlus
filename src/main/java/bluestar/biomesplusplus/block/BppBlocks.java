@@ -57,6 +57,9 @@ public class BppBlocks
     public static final Block MOSSY_SCORCHED_COBBLESTONE_WALL = registerBlock("mossy_scorched_cobblestone_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_COBBLESTONE_WALL)), true);
     public static final Block MOSSY_SCORCHED_STONE_BRICK_WALL = registerBlock("mossy_scorched_stone_brick_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_STONE_BRICK_WALL)), true);
 
+    //MUSHROOM STUFF
+    public static final Block HUGE_CYAN_MUSHROOM = registerBlock("cyan_mushroom_block", new HugeMushroomBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)), true);
+    public static final Block HUGE_PURPLE_MUSHROOM = registerBlock("purple_mushroom_block", new HugeMushroomBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)), true);
 
     /***********************************************************************
      * Tree blocks
@@ -79,6 +82,12 @@ public class BppBlocks
 
     public static final Block FROZEN_SAPLING = registerBlock("frozen_sapling", new SaplingBlock(BppSaplingGenerator.FROZEN,
             FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), true);
+
+    public static final Block CYAN_MUSHROOM = registerBlock("cyan_mushroom", new SaplingBlock(BppSaplingGenerator.HUGE_CYAN_MUSHROOM,
+            FabricBlockSettings.copyOf(Blocks.BROWN_MUSHROOM)), true);
+
+    public static final Block PURPLE_MUSHROOM = registerBlock("purple_mushroom", new SaplingBlock(BppSaplingGenerator.HUGE_PURPLE_MUSHROOM,
+            FabricBlockSettings.copyOf(Blocks.BROWN_MUSHROOM)), true);
 
 
 

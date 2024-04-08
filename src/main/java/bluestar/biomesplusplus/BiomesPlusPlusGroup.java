@@ -1,6 +1,7 @@
 package bluestar.biomesplusplus;
 
 import bluestar.biomesplusplus.block.BppBlocks;
+import bluestar.biomesplusplus.item.BppItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -108,11 +109,20 @@ public class BiomesPlusPlusGroup
                                 entries.accept(BppBlocks.END_LEAVES);
                                 entries.accept(BppBlocks.FROZEN_LEAVES);
 
+                                entries.accept(BppBlocks.HUGE_CYAN_MUSHROOM);
+                                entries.accept(BppBlocks.HUGE_PURPLE_MUSHROOM);
+
                                 entries.accept(BppBlocks.EUCALYPTUS_SAPLING);
                                 entries.accept(BppBlocks.CYPRESS_SAPLING);
                                 entries.accept(BppBlocks.END_SAPLING);
                                 entries.accept(BppBlocks.FROZEN_SAPLING);
                                 entries.accept(BppBlocks.FANCY_BIRCH_SAPLING);
+
+                                entries.accept(BppBlocks.CYAN_MUSHROOM);
+                                entries.accept(BppBlocks.PURPLE_MUSHROOM);
+
+                                //entries.accept(BppItems.END_STONE_SCRAP);
+
                             }).build());
 
     public static void registerItemGroups()

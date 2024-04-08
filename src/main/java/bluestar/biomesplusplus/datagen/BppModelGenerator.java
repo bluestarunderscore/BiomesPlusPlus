@@ -2,10 +2,12 @@ package bluestar.biomesplusplus.datagen;
 
 
 import bluestar.biomesplusplus.block.BppBlocks;
+import bluestar.biomesplusplus.item.BppItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.data.models.model.TexturedModel;
 
 public class BppModelGenerator extends FabricModelProvider
@@ -50,6 +52,9 @@ public class BppModelGenerator extends FabricModelProvider
                 .log(BppBlocks.STRIPPED_FROZEN_LOG)
                 .wood(BppBlocks.STRIPPED_FROZEN_WOOD);
 
+        generator.createMushroomBlock(BppBlocks.HUGE_CYAN_MUSHROOM);
+        generator.createMushroomBlock(BppBlocks.HUGE_PURPLE_MUSHROOM);
+
         generator.createTrivialBlock(BppBlocks.EUCALYPTUS_LEAVES, TexturedModel.LEAVES);
         generator.createTrivialBlock(BppBlocks.CYPRESS_LEAVES, TexturedModel.LEAVES);
         generator.createTrivialBlock(BppBlocks.END_LEAVES, TexturedModel.LEAVES);
@@ -65,6 +70,9 @@ public class BppModelGenerator extends FabricModelProvider
         generator.createCrossBlockWithDefaultItem(BppBlocks.CYPRESS_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
         generator.createCrossBlockWithDefaultItem(BppBlocks.END_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
         generator.createCrossBlockWithDefaultItem(BppBlocks.FROZEN_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
+
+        generator.createCrossBlockWithDefaultItem(BppBlocks.CYAN_MUSHROOM, BlockModelGenerators.TintState.NOT_TINTED);
+        generator.createCrossBlockWithDefaultItem(BppBlocks.PURPLE_MUSHROOM, BlockModelGenerators.TintState.NOT_TINTED);
 
         BlockModelGenerators.BlockFamilyProvider scorchedStonePool = generator.family(BppBlocks.SCORCHED_STONE);
         scorchedStonePool.slab(BppBlocks.SCORCHED_STONE_SLAB);
@@ -137,6 +145,6 @@ public class BppModelGenerator extends FabricModelProvider
     @Override
     public void generateItemModels(ItemModelGenerators generator)
     {
-
+        generator.generateFlatItem(BppItems.END_STONE_SCRAP, ModelTemplates.FLAT_ITEM);
     }
 }

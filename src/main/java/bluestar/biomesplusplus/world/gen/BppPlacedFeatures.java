@@ -44,6 +44,9 @@ public class BppPlacedFeatures
     public static final ResourceKey<PlacedFeature> JUNGLE_END_KEY_PLACED = registerKey("jungle_end");
     public static final ResourceKey<PlacedFeature> MAGIC_OAK_KEY_PLACED = registerKey("magic_oak");
 
+    public static final ResourceKey<PlacedFeature> HUGE_CYAN_MUSHROOM_KEY_PLACED = registerKey("huge_cyan_mushroom");
+    public static final ResourceKey<PlacedFeature> HUGE_PURPLE_MUSHROOM_KEY_PLACED = registerKey("huge_purple_mushroom");
+
 
     public static void bootstrap(BootstapContext<PlacedFeature> context)
     {
@@ -101,6 +104,12 @@ public class BppPlacedFeatures
 
         register(context, MAGIC_OAK_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.MAGIC_OAK_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(9, 0.01f, 10),(Blocks.OAK_SAPLING)));
+
+        register(context, HUGE_CYAN_MUSHROOM_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.HUGE_CYAN_MUSHROOM_KEY),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(3),(Blocks.BROWN_MUSHROOM)));
+
+        register(context, HUGE_PURPLE_MUSHROOM_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.HUGE_PURPLE_MUSHROOM_KEY),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(3),(Blocks.BROWN_MUSHROOM)));
 
     }
 

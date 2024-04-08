@@ -11,13 +11,12 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 
+import net.minecraft.world.level.block.HugeMushroomBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.IceSpikeFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
 import java.util.List;
@@ -45,6 +44,9 @@ public class BppConfiguredFeatures
     public static final ResourceKey<ConfiguredFeature<?, ?>> TINY_END_BUSH_KEY = registerKey("tiny_end_bush");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DARK_END_KEY = registerKey("dark_end");
     public static final ResourceKey<ConfiguredFeature<?, ?>> JUNGLE_END_KEY = registerKey("jungle_end");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_CYAN_MUSHROOM_KEY = registerKey("huge_cyan_mushroom");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_PURPLE_MUSHROOM_KEY = registerKey("huge_purple_mushroom");
 
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context)
@@ -99,6 +101,11 @@ public class BppConfiguredFeatures
 
         register(context, MAGIC_OAK_KEY, Feature.TREE,
                 BppTrees.getCherryTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES));
+
+        register(context, HUGE_CYAN_MUSHROOM_KEY, Feature.HUGE_BROWN_MUSHROOM, new HugeMushroomFeatureConfiguration(BlockStateProvider.simple((BlockState)BppBlocks.HUGE_CYAN_MUSHROOM.defaultBlockState().setValue(HugeMushroomBlock.DOWN, false)), BlockStateProvider.simple((BlockState)((BlockState)Blocks.MUSHROOM_STEM.defaultBlockState().setValue(HugeMushroomBlock.UP, false)).setValue(HugeMushroomBlock.DOWN, false)), 2));
+
+        register(context, HUGE_PURPLE_MUSHROOM_KEY, Feature.HUGE_RED_MUSHROOM, new HugeMushroomFeatureConfiguration(BlockStateProvider.simple((BlockState)BppBlocks.HUGE_PURPLE_MUSHROOM.defaultBlockState().setValue(HugeMushroomBlock.DOWN, false)), BlockStateProvider.simple((BlockState)((BlockState)Blocks.MUSHROOM_STEM.defaultBlockState().setValue(HugeMushroomBlock.UP, false)).setValue(HugeMushroomBlock.DOWN, false)), 2));
+
 
     }
 

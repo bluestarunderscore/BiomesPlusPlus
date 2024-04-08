@@ -42,6 +42,9 @@ public class BiomesPlusPlusClient implements ClientModInitializer
         BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.END_TRAPDOOR, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.FROZEN_TRAPDOOR, RenderType.cutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.CYAN_MUSHROOM, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BppBlocks.PURPLE_MUSHROOM, RenderType.cutout());
+
 
     }
 

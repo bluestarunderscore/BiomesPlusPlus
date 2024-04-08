@@ -47,4 +47,20 @@ public class BppSaplingGenerator
                     Optional.empty(),
                     Optional.empty(),
                     Optional.empty());
+
+    public static final TreeGrower HUGE_CYAN_MUSHROOM =
+            new TreeGrower("huge_cyan_mushroom", 0f, Optional.empty(),
+                    Optional.empty(),
+                    Optional.of(BppConfiguredFeatures.HUGE_CYAN_MUSHROOM_KEY),
+                    Optional.empty(),
+                    Optional.empty(),
+                    Optional.empty());
+
+    public static final TreeGrower HUGE_PURPLE_MUSHROOM =
+            new TreeGrower("huge_purple_mushroom", 0f, Optional.empty(),
+                    Optional.empty(),
+                    Optional.of(BppConfiguredFeatures.HUGE_PURPLE_MUSHROOM_KEY),
+                    Optional.empty(),
+                    Optional.empty(),
+                    Optional.empty());
 }
