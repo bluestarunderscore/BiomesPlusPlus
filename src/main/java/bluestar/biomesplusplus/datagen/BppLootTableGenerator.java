@@ -1,9 +1,23 @@
 package bluestar.biomesplusplus.datagen;
 
 import bluestar.biomesplusplus.block.BppBlocks;
+import bluestar.biomesplusplus.item.BppItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.LootDataManager;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 public class BppLootTableGenerator extends FabricBlockLootTableProvider
 {
@@ -15,6 +29,23 @@ public class BppLootTableGenerator extends FabricBlockLootTableProvider
     @Override
     public void generate()
     {
+        //Grimstone blocks
+        dropSelf(BppBlocks.GRIMSTONE);
+        dropSelf(BppBlocks.GRIMSTONE_STAIRS);
+        dropSelf(BppBlocks.GRIMSTONE_SLAB);
+        dropSelf(BppBlocks.GRIMSTONE_WALL);
+
+        dropSelf(BppBlocks.CRACKED_GRIMSTONE_BRICKS);
+        dropSelf(BppBlocks.GRIMSTONE_BRICKS);
+        dropSelf(BppBlocks.GRIMSTONE_BRICK_SLAB);
+        dropSelf(BppBlocks.GRIMSTONE_BRICK_STAIRS);
+        dropSelf(BppBlocks.GRIMSTONE_BRICK_WALL);
+
+        dropSelf(BppBlocks.POLISHED_GRIMSTONE);
+        dropSelf(BppBlocks.POLISHED_GRIMSTONE_SLAB);
+        dropSelf(BppBlocks.POLISHED_GRIMSTONE_STAIRS);
+        dropSelf(BppBlocks.POLISHED_GRIMSTONE_WALL);
+
         //Wasteland blocks
         dropSelf(BppBlocks.SCORCHED_DIRT);
         dropSelf(BppBlocks.RANGES_DIRT);
@@ -25,7 +56,7 @@ public class BppLootTableGenerator extends FabricBlockLootTableProvider
         dropSelf(BppBlocks.MOSSY_SCORCHED_COBBLESTONE);
         dropSelf(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_STAIRS);
         dropSelf(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_WALL);
-        dropOther(BppBlocks.SCORCHED_STONE, BppBlocks.SCORCHED_COBBLESTONE);
+        otherWhenSilkTouch(BppBlocks.SCORCHED_STONE, BppBlocks.SCORCHED_COBBLESTONE);
         dropSelf(BppBlocks.SCORCHED_STONE_STAIRS);
         dropSelf(BppBlocks.SCORCHED_STONE_BRICKS);
         dropSelf(BppBlocks.SCORCHED_STONE_BRICK_STAIRS);
@@ -116,5 +147,25 @@ public class BppLootTableGenerator extends FabricBlockLootTableProvider
         add(BppBlocks.SCORCHED_STONE_BRICK_SLAB, createSlabItemTable(BppBlocks.SCORCHED_STONE_BRICK_SLAB));
         add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_SLAB, createSlabItemTable(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_SLAB));
         add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_SLAB, createSlabItemTable(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_SLAB));
+
+        add(BppBlocks.END_DEPOSIT, createFortunableoreDrop(BppBlocks.END_DEPOSIT, BppItems.END_STONE_SCRAP, 1.0F, 3.0F));
+        add(BppBlocks.SCORCHED_END_DEPOSIT, createFortunableoreDrop(BppBlocks.SCORCHED_END_DEPOSIT, BppItems.END_STONE_SCRAP, 1.0F, 3.0F));
+        add(BppBlocks.DEEPSLATE_END_DEPOSIT, createFortunableoreDrop(BppBlocks.DEEPSLATE_END_DEPOSIT, BppItems.END_STONE_SCRAP, 1.0F, 3.0F));
+    }
+
+
+    public LootTable.Builder createFortunableoreDrop(Block block, Item item, float min, float max)
+    {
+        return BlockLootSubProvider.createSilkTouchDispatchTable(block,
+                (LootPoolEntryContainer.Builder)this.applyExplosionDecay(block,
+                        ((LootPoolSingletonContainer.Builder) LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max))))
+                                .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+    }
+
+    public LootTable.Builder createFortunableOreDrop(Block block, Item item)
+    {
+        return BlockLootSubProvider.createSilkTouchDispatchTable(block,
+                (LootPoolEntryContainer.Builder)this.applyExplosionDecay(block, LootItem.lootTableItem(item)
+                        .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
     }
 }

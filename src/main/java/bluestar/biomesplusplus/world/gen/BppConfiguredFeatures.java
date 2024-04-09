@@ -27,6 +27,7 @@ public class BppConfiguredFeatures
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_OAK_KEY = registerKey("tall_oak");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MAGIC_OAK_KEY = registerKey("magic_oak");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_BIRCH_KEY = registerKey("fancy_birch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_OAK_KEY = registerKey("fancy_oak");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EUCALYPTUS_KEY = registerKey("eucalyptus");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_SWAMP_KEY = registerKey("tall_swamp");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ROOFED_VINED_KEY = registerKey("roofed_vined");
@@ -45,6 +46,8 @@ public class BppConfiguredFeatures
     public static final ResourceKey<ConfiguredFeature<?, ?>> DARK_END_KEY = registerKey("dark_end");
     public static final ResourceKey<ConfiguredFeature<?, ?>> JUNGLE_END_KEY = registerKey("jungle_end");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> RAINFOREST_OAK_KEY = registerKey("rainforest_oak");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_CYAN_MUSHROOM_KEY = registerKey("huge_cyan_mushroom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_PURPLE_MUSHROOM_KEY = registerKey("huge_purple_mushroom");
 
@@ -56,6 +59,9 @@ public class BppConfiguredFeatures
 
         register(context, FANCY_BIRCH_KEY, Feature.TREE,
                 BppTrees.getStandardFancyTree(Blocks.BIRCH_LOG, Blocks.BIRCH_LEAVES));
+
+        register(context, FANCY_OAK_KEY, Feature.TREE,
+                BppTrees.getStandardFancyTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES));
 
         register(context, EUCALYPTUS_KEY, Feature.TREE,
                 BppTrees.getAcaciaTree(BppBlocks.EUCALYPTUS_LOG, BppBlocks.EUCALYPTUS_LEAVES));
@@ -88,10 +94,10 @@ public class BppConfiguredFeatures
                 BppTrees.getBush(Blocks.OAK_LOG, Blocks.OAK_LEAVES));
 
         register(context, TINY_OAK_BUSH_KEY, Feature.TREE,
-                BppTrees.getTinyBush(Blocks.OAK_LOG, Blocks.OAK_LEAVES));
+                BppTrees.getTinyBush(2, 1, Blocks.OAK_LOG, Blocks.OAK_LEAVES, false));
 
         register(context, TINY_END_BUSH_KEY, Feature.TREE,
-                BppTrees.getTinyBush(BppBlocks.END_LOG, BppBlocks.END_LEAVES));
+                BppTrees.getTinyBush(2, 1, BppBlocks.END_LOG, BppBlocks.END_LEAVES, false));
 
         register(context, DARK_END_KEY, Feature.TREE,
                 BppTrees.getDarkOakTree(16, 5, BppBlocks.END_LOG, BppBlocks.END_LEAVES, false));
@@ -101,6 +107,9 @@ public class BppConfiguredFeatures
 
         register(context, MAGIC_OAK_KEY, Feature.TREE,
                 BppTrees.getCherryTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES));
+
+        register(context, RAINFOREST_OAK_KEY, Feature.TREE,
+                BppTrees.getMegaSpruceTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES));
 
         register(context, HUGE_CYAN_MUSHROOM_KEY, Feature.HUGE_BROWN_MUSHROOM, new HugeMushroomFeatureConfiguration(BlockStateProvider.simple((BlockState)BppBlocks.HUGE_CYAN_MUSHROOM.defaultBlockState().setValue(HugeMushroomBlock.DOWN, false)), BlockStateProvider.simple((BlockState)((BlockState)Blocks.MUSHROOM_STEM.defaultBlockState().setValue(HugeMushroomBlock.UP, false)).setValue(HugeMushroomBlock.DOWN, false)), 2));
 

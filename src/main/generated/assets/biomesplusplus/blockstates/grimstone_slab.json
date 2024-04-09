@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "biomesplusplus:block/grimstone_slab"
+    },
+    "type=double": {
+      "model": "biomesplusplus:block/grimstone"
+    },
+    "type=top": {
+      "model": "biomesplusplus:block/grimstone_slab_top"
+    }
+  }
+}

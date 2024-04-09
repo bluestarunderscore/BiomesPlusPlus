@@ -4,6 +4,9 @@
     "biomesplusplus:scorched_cobblestone_wall",
     "biomesplusplus:scorched_stone_brick_wall",
     "biomesplusplus:mossy_scorched_stone_brick_wall",
-    "biomesplusplus:mossy_scorched_cobblestone_wall"
+    "biomesplusplus:mossy_scorched_cobblestone_wall",
+    "biomesplusplus:grimstone_wall",
+    "biomesplusplus:polished_grimstone_wall",
+    "biomesplusplus:grimstone_brick_wall"
   ]
 }

@@ -27,6 +27,7 @@ public class BiomesPlusPlusMaterialRules
     private static final SurfaceRules.RuleSource COARSE_SCORCHED_DIRT = makeStateRule(BppBlocks.COARSE_SCORCHED_DIRT);
     private static final SurfaceRules.RuleSource SANDSTONE = makeStateRule(Blocks.SANDSTONE);
     private static final SurfaceRules.RuleSource RANGES_DIRT = makeStateRule(BppBlocks.RANGES_DIRT);
+    private static final SurfaceRules.RuleSource MYCELIUM = makeStateRule(Blocks.MYCELIUM);
 
     public static SurfaceRules.RuleSource makeRules()
     {
@@ -44,6 +45,10 @@ public class BiomesPlusPlusMaterialRules
                 SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, 0.14, 4194304), RANGES_DIRT),
                 SANDSTONE);
 
+        SurfaceRules.RuleSource mixedMyceliumNoise = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, 0.14, 4194304), MYCELIUM),
+                GRASS_BLOCK);
+
         //"Grass" is first arg, "dirt" is second for the below statement
         SurfaceRules.RuleSource stoneSurface = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(isAbove(60), AIR)),
@@ -60,6 +65,10 @@ public class BiomesPlusPlusMaterialRules
         SurfaceRules.RuleSource sandstoneRangesSurface = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(isAbove(59), sandstoneRangesNoise)),
                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(isAbove(59), sandstoneRangesNoise)));
+
+        SurfaceRules.RuleSource mushroomRainforestSurface = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(isAbove(59), mixedMyceliumNoise)),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(isAbove(59), DIRT)));
 
         SurfaceRules.RuleSource swampySurface = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(
@@ -83,6 +92,7 @@ public class BiomesPlusPlusMaterialRules
 
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.DARK_SWAMP), swampySurface),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.SILK_WETLAND), swampySurface),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.MUSHROOM_RAINFOREST), mushroomRainforestSurface),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BppBiomes.SANDSTONE_RANGES), sandstoneRangesSurface));
 
     }

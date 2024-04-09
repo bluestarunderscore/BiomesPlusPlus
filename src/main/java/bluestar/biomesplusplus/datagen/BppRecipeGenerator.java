@@ -1,5 +1,6 @@
 package bluestar.biomesplusplus.datagen;
 
+import bluestar.biomesplusplus.BiomesPlusPlus;
 import bluestar.biomesplusplus.block.BppBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -28,8 +29,11 @@ public class BppRecipeGenerator extends FabricRecipeProvider
         //FURNACE
         BppRecipeGenerator.smeltingResultFromBase(exporter, BppBlocks.SCORCHED_STONE, BppBlocks.SCORCHED_COBBLESTONE);
         BppRecipeGenerator.smeltingResultFromBase(exporter, BppBlocks.CRACKED_SCORCHED_STONE_BRICKS, BppBlocks.SCORCHED_STONE_BRICKS);
+        BppRecipeGenerator.smeltingResultFromBase(exporter, BppBlocks.CRACKED_GRIMSTONE_BRICKS, BppBlocks.GRIMSTONE_BRICKS);
+        BppRecipeGenerator.smeltingResultFromBase(exporter, BppBlocks.SCORCHED_DIRT, Blocks.DIRT);
+        BppRecipeGenerator.smeltingResultFromBase(exporter, BppBlocks.COARSE_SCORCHED_DIRT, Blocks.COARSE_DIRT);
 
-        //STONECUTTER
+        //STONECUTTER - SCORCHED
         BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.SCORCHED_STONE_BRICK_SLAB, BppBlocks.SCORCHED_STONE, 2);
         BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.SCORCHED_STONE_BRICK_STAIRS, BppBlocks.SCORCHED_STONE);
         BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.DECORATIONS, BppBlocks.SCORCHED_STONE_BRICK_WALL, BppBlocks.SCORCHED_STONE);
@@ -53,21 +57,66 @@ public class BppRecipeGenerator extends FabricRecipeProvider
         BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_COBBLESTONE_STAIRS, BppBlocks.MOSSY_SCORCHED_COBBLESTONE);
         BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.DECORATIONS, BppBlocks.MOSSY_SCORCHED_COBBLESTONE_WALL, BppBlocks.MOSSY_SCORCHED_COBBLESTONE);
 
+        //STONECUTTER - GRIMSTONE
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICK_SLAB, BppBlocks.GRIMSTONE_BRICKS, 2);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICK_STAIRS, BppBlocks.GRIMSTONE_BRICKS);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICK_WALL, BppBlocks.GRIMSTONE_BRICKS);
+
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICK_SLAB, BppBlocks.POLISHED_GRIMSTONE, 2);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICK_STAIRS, BppBlocks.POLISHED_GRIMSTONE);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICK_WALL, BppBlocks.POLISHED_GRIMSTONE);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICKS, BppBlocks.POLISHED_GRIMSTONE);
+
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.POLISHED_GRIMSTONE_SLAB, BppBlocks.POLISHED_GRIMSTONE, 2);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.POLISHED_GRIMSTONE_STAIRS, BppBlocks.POLISHED_GRIMSTONE);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.POLISHED_GRIMSTONE_WALL, BppBlocks.POLISHED_GRIMSTONE);
+
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_SLAB, BppBlocks.GRIMSTONE, 2);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_STAIRS, BppBlocks.GRIMSTONE);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_WALL, BppBlocks.GRIMSTONE);
+
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICKS, BppBlocks.GRIMSTONE);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICK_SLAB, BppBlocks.GRIMSTONE, 2);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICK_STAIRS, BppBlocks.GRIMSTONE);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICK_WALL, BppBlocks.GRIMSTONE);
+
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.POLISHED_GRIMSTONE, BppBlocks.GRIMSTONE);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.POLISHED_GRIMSTONE_SLAB, BppBlocks.GRIMSTONE, 2);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.POLISHED_GRIMSTONE_STAIRS, BppBlocks.GRIMSTONE);
+        BppRecipeGenerator.stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, BppBlocks.POLISHED_GRIMSTONE_WALL, BppBlocks.GRIMSTONE);
+
+
 
         //MOSSY COBBLE
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_COBBLESTONE, 4).requires(BppBlocks.SCORCHED_COBBLESTONE).requires(Blocks.MOSS_BLOCK)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_COBBLESTONE).requires(BppBlocks.SCORCHED_COBBLESTONE).requires(Blocks.MOSS_BLOCK)
                 .unlockedBy(getHasName(BppBlocks.SCORCHED_COBBLESTONE), FabricRecipeProvider.has(BppBlocks.SCORCHED_COBBLESTONE))
                 .save(exporter, new ResourceLocation("mossy_scorched_cobblestone_moss"));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_COBBLESTONE, 4).requires(BppBlocks.SCORCHED_COBBLESTONE).requires(Blocks.VINE)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_COBBLESTONE).requires(BppBlocks.SCORCHED_COBBLESTONE).requires(Blocks.VINE)
                 .unlockedBy(getHasName(BppBlocks.SCORCHED_COBBLESTONE), FabricRecipeProvider.has(BppBlocks.SCORCHED_COBBLESTONE))
                 .save(exporter, new ResourceLocation("mossy_scorched_cobblestone_vine"));
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_STONE_BRICKS, 4).requires(BppBlocks.SCORCHED_STONE_BRICKS).requires(Blocks.MOSS_BLOCK)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_STONE_BRICKS).requires(BppBlocks.SCORCHED_STONE_BRICKS).requires(Blocks.MOSS_BLOCK)
                 .unlockedBy(getHasName(BppBlocks.SCORCHED_STONE_BRICKS), FabricRecipeProvider.has(BppBlocks.SCORCHED_STONE_BRICKS))
                 .save(exporter, new ResourceLocation("mossy_scorched_stone_brick_moss"));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_STONE_BRICKS, 4).requires(BppBlocks.SCORCHED_STONE_BRICKS).requires(Blocks.VINE)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.MOSSY_SCORCHED_STONE_BRICKS).requires(BppBlocks.SCORCHED_STONE_BRICKS).requires(Blocks.VINE)
                 .unlockedBy(getHasName(BppBlocks.SCORCHED_STONE_BRICKS), FabricRecipeProvider.has(BppBlocks.SCORCHED_STONE_BRICKS))
                 .save(exporter, new ResourceLocation("mossy_scorched_stone_brick_vine"));
+        //DIRTS
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.RANGES_DIRT, 4)
+                .pattern("DS").pattern("SD").define('D', Blocks.DIRT).define('S', Blocks.SAND).unlockedBy(getHasName(Blocks.SAND), has(BppBlocks.RANGES_DIRT))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.RANGES_DIRT)));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.COARSE_SCORCHED_DIRT, 4)
+                .pattern("DS").pattern("SD").define('D', BppBlocks.SCORCHED_DIRT).define('S', Blocks.GRAVEL).unlockedBy(getHasName(BppBlocks.SCORCHED_DIRT), has(BppBlocks.COARSE_SCORCHED_DIRT))
+                .save(exporter, new ResourceLocation(BiomesPlusPlus.MOD_ID, "coarse_scorched_dirt_from_gravel"));
+
+        //POLISHED STONES
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.POLISHED_GRIMSTONE, 4)
+                .pattern("PP").pattern("PP").define('P', BppBlocks.GRIMSTONE).unlockedBy(getHasName(BppBlocks.GRIMSTONE), has(BppBlocks.POLISHED_GRIMSTONE))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.POLISHED_GRIMSTONE)));
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICKS, 4)
+                .pattern("PP").pattern("PP").define('P', BppBlocks.POLISHED_GRIMSTONE).unlockedBy(getHasName(BppBlocks.POLISHED_GRIMSTONE), has(BppBlocks.GRIMSTONE_BRICKS))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.GRIMSTONE_BRICKS)));
 
         //STONE SLABS
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.SCORCHED_STONE_SLAB, 6)
@@ -89,6 +138,18 @@ public class BppRecipeGenerator extends FabricRecipeProvider
                 .pattern("PPP").define('P', BppBlocks.MOSSY_SCORCHED_STONE_BRICKS)
                 .unlockedBy(getHasName(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS), has(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_SLAB))
                 .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_SLAB)));
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_SLAB, 6)
+                .pattern("PPP").define('P', BppBlocks.GRIMSTONE)
+                .unlockedBy(getHasName(BppBlocks.GRIMSTONE), has(BppBlocks.GRIMSTONE_SLAB))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.GRIMSTONE_SLAB)));
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.POLISHED_GRIMSTONE_SLAB, 6)
+                .pattern("PPP").define('P', BppBlocks.POLISHED_GRIMSTONE)
+                .unlockedBy(getHasName(BppBlocks.POLISHED_GRIMSTONE), has(BppBlocks.POLISHED_GRIMSTONE_SLAB))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.POLISHED_GRIMSTONE_SLAB)));
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICK_SLAB, 6)
+                .pattern("PPP").define('P', BppBlocks.GRIMSTONE_BRICKS)
+                .unlockedBy(getHasName(BppBlocks.GRIMSTONE_BRICKS), has(BppBlocks.GRIMSTONE_BRICK_SLAB))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.GRIMSTONE_BRICK_SLAB)));
 
         //STONE STAIRS
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.SCORCHED_STONE_STAIRS, 4)
@@ -112,6 +173,21 @@ public class BppRecipeGenerator extends FabricRecipeProvider
                 .unlockedBy(getHasName(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS), has(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_STAIRS))
                 .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_STAIRS)));
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_STAIRS, 4)
+                .pattern("P  ").pattern("PP ").pattern("PPP").define('P', BppBlocks.GRIMSTONE)
+                .unlockedBy(getHasName(BppBlocks.GRIMSTONE), has(BppBlocks.GRIMSTONE_STAIRS))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.GRIMSTONE_STAIRS)));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.POLISHED_GRIMSTONE_STAIRS, 4)
+                .pattern("P  ").pattern("PP ").pattern("PPP").define('P', BppBlocks.POLISHED_GRIMSTONE)
+                .unlockedBy(getHasName(BppBlocks.POLISHED_GRIMSTONE), has(BppBlocks.POLISHED_GRIMSTONE_STAIRS))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.POLISHED_GRIMSTONE_STAIRS)));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BppBlocks.GRIMSTONE_BRICK_STAIRS, 4)
+                .pattern("P  ").pattern("PP ").pattern("PPP").define('P', BppBlocks.GRIMSTONE_BRICKS)
+                .unlockedBy(getHasName(BppBlocks.GRIMSTONE_BRICKS), has(BppBlocks.GRIMSTONE_BRICK_STAIRS))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.GRIMSTONE_BRICK_STAIRS)));
+
         //WALLS
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BppBlocks.SCORCHED_COBBLESTONE_WALL, 6)
                 .pattern("PPP").pattern("PPP").define('P', BppBlocks.SCORCHED_COBBLESTONE)
@@ -129,6 +205,19 @@ public class BppRecipeGenerator extends FabricRecipeProvider
                 .pattern("PPP").pattern("PPP").define('P', BppBlocks.MOSSY_SCORCHED_STONE_BRICKS)
                 .unlockedBy(getHasName(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS), has(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_WALL))
                 .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_WALL)));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BppBlocks.GRIMSTONE_WALL, 6)
+                .pattern("PPP").pattern("PPP").define('P', BppBlocks.GRIMSTONE)
+                .unlockedBy(getHasName(BppBlocks.GRIMSTONE), has(BppBlocks.GRIMSTONE_WALL))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.GRIMSTONE_WALL)));
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BppBlocks.POLISHED_GRIMSTONE_WALL, 6)
+                .pattern("PPP").pattern("PPP").define('P', BppBlocks.POLISHED_GRIMSTONE)
+                .unlockedBy(getHasName(BppBlocks.POLISHED_GRIMSTONE), has(BppBlocks.POLISHED_GRIMSTONE_WALL))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.POLISHED_GRIMSTONE_WALL)));
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BppBlocks.GRIMSTONE_BRICK_WALL, 6)
+                .pattern("PPP").pattern("PPP").define('P', BppBlocks.GRIMSTONE_BRICKS)
+                .unlockedBy(getHasName(BppBlocks.GRIMSTONE_BRICKS), has(BppBlocks.GRIMSTONE_BRICK_WALL))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BppBlocks.GRIMSTONE_BRICK_WALL)));
 
         //PLANKS (LOG AND BARK)
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BppBlocks.EUCALYPTUS_PLANKS, 4).requires(BppBlocks.EUCALYPTUS_LOG)

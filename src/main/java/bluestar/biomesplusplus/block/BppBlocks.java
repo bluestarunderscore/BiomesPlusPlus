@@ -1,6 +1,8 @@
 package bluestar.biomesplusplus.block;
 
 import bluestar.biomesplusplus.BiomesPlusPlus;
+import bluestar.biomesplusplus.world.gen.BppConfiguredFeatures;
+import bluestar.biomesplusplus.world.gen.BppPlacedFeatures;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.core.Registry;
@@ -20,15 +22,22 @@ import bluestar.biomesplusplus.world.gen.tree.BppSaplingGenerator;
 
 public class BppBlocks
 {
+    //END DEPOSIT
+    public static final Block END_DEPOSIT = registerBlock("end_deposit", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_ORE)), true);
+    public static final Block DEEPSLATE_END_DEPOSIT = registerBlock("deepslate_end_deposit", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_GOLD_ORE)), true);
+    public static final Block SCORCHED_END_DEPOSIT = registerBlock("scorched_end_deposit", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_ORE)), true);
+
+    //GRIMSTONE BLOCKS
+    public static final Block GRIMSTONE = registerBlock("grimstone", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE)), true);
+    public static final Block POLISHED_GRIMSTONE = registerBlock("polished_grimstone", new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_DEEPSLATE)), true);
+    public static final Block GRIMSTONE_BRICKS = registerBlock("grimstone_bricks", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_BRICKS)), true);
+    public static final Block CRACKED_GRIMSTONE_BRICKS = registerBlock("cracked_grimstone_bricks", new Block(FabricBlockSettings.copyOf(Blocks.CRACKED_DEEPSLATE_BRICKS)), true);
 
     //WASTELAND BLOCKS
     public static final Block SCORCHED_DIRT = registerBlock("scorched_dirt", new GrassBlock(FabricBlockSettings.copyOf(Blocks.DIRT)), true);
     public static final Block COARSE_SCORCHED_DIRT = registerBlock("coarse_scorched_dirt", new GrassBlock(FabricBlockSettings.copyOf(Blocks.COARSE_DIRT)), true);
 
     public static final Block RANGES_DIRT = registerBlock("ranges_dirt", new GrassBlock(FabricBlockSettings.copyOf(Blocks.DIRT)), true);
-
-    //public static final Block SCORCHED_DIRT_PATH = registerBlock("scorched_dirt_path", new DirtPathBlock(FabricBlockSettings.copyOf(Blocks.DIRT_PATH)), true);
-    //public static final Block RANGES_DIRT_PATH = registerBlock("ranges_dirt_path", new DirtPathBlock(FabricBlockSettings.copyOf(Blocks.DIRT_PATH)), true);
 
     public static final Block SCORCHED_STONE = registerBlock("scorched_stone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)), true);
     public static final Block SCORCHED_COBBLESTONE = registerBlock("scorched_cobblestone", new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)), true);
@@ -42,6 +51,10 @@ public class BppBlocks
     public static final Block SCORCHED_STONE_BRICK_SLAB = registerBlock("scorched_stone_brick_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)), true);
     public static final Block MOSSY_SCORCHED_COBBLESTONE_SLAB = registerBlock("mossy_scorched_cobblestone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_COBBLESTONE_SLAB)), true);
     public static final Block MOSSY_SCORCHED_STONE_BRICK_SLAB = registerBlock("mossy_scorched_stone_brick_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_STONE_BRICK_SLAB)), true);
+    public static final Block GRIMSTONE_SLAB = registerBlock("grimstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DEEPSLATE_SLAB)), true);
+    public static final Block POLISHED_GRIMSTONE_SLAB = registerBlock("polished_grimstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DEEPSLATE_SLAB)), true);
+    public static final Block GRIMSTONE_BRICK_SLAB = registerBlock("grimstone_brick_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_BRICK_SLAB)), true);
+
 
     //STONE STAIRS
     public static final Block SCORCHED_STONE_STAIRS = registerBlock("scorched_stone_stairs", new StairBlock(BppBlocks.SCORCHED_STONE.defaultBlockState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)), true);
@@ -49,6 +62,9 @@ public class BppBlocks
     public static final Block SCORCHED_STONE_BRICK_STAIRS = registerBlock("scorched_stone_brick_stairs", new StairBlock(BppBlocks.SCORCHED_STONE_BRICKS.defaultBlockState(), FabricBlockSettings.copyOf(Blocks.STONE_BRICK_STAIRS)), true);
     public static final Block MOSSY_SCORCHED_COBBLESTONE_STAIRS = registerBlock("mossy_scorched_cobblestone_stairs", new StairBlock(BppBlocks.MOSSY_SCORCHED_COBBLESTONE.defaultBlockState(), FabricBlockSettings.copyOf(Blocks.MOSSY_COBBLESTONE_STAIRS)), true);
     public static final Block MOSSY_SCORCHED_STONE_BRICK_STAIRS = registerBlock("mossy_scorched_stone_brick_stairs", new StairBlock(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS.defaultBlockState(), FabricBlockSettings.copyOf(Blocks.MOSSY_STONE_BRICK_STAIRS)), true);
+    public static final Block GRIMSTONE_STAIRS = registerBlock("grimstone_stairs", new StairBlock(BppBlocks.GRIMSTONE.defaultBlockState(), FabricBlockSettings.copyOf(Blocks.POLISHED_DEEPSLATE_STAIRS)), true);
+    public static final Block POLISHED_GRIMSTONE_STAIRS = registerBlock("polished_grimstone_stairs", new StairBlock(BppBlocks.POLISHED_GRIMSTONE.defaultBlockState(), FabricBlockSettings.copyOf(Blocks.POLISHED_DEEPSLATE_STAIRS)), true);
+    public static final Block GRIMSTONE_BRICK_STAIRS = registerBlock("grimstone_brick_stairs", new StairBlock(BppBlocks.GRIMSTONE_BRICKS.defaultBlockState(), FabricBlockSettings.copyOf(Blocks.DEEPSLATE_BRICK_STAIRS)), true);
 
 
     //STONE WALLS
@@ -56,6 +72,11 @@ public class BppBlocks
     public static final Block SCORCHED_STONE_BRICK_WALL = registerBlock("scorched_stone_brick_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL)), true);
     public static final Block MOSSY_SCORCHED_COBBLESTONE_WALL = registerBlock("mossy_scorched_cobblestone_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_COBBLESTONE_WALL)), true);
     public static final Block MOSSY_SCORCHED_STONE_BRICK_WALL = registerBlock("mossy_scorched_stone_brick_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.MOSSY_STONE_BRICK_WALL)), true);
+    public static final Block GRIMSTONE_WALL = registerBlock("grimstone_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DEEPSLATE_WALL)), true);
+    public static final Block POLISHED_GRIMSTONE_WALL = registerBlock("polished_grimstone_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_DEEPSLATE_WALL)), true);
+    public static final Block GRIMSTONE_BRICK_WALL = registerBlock("grimstone_brick_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_BRICK_WALL)), true);
+
+
 
     //MUSHROOM STUFF
     public static final Block HUGE_CYAN_MUSHROOM = registerBlock("cyan_mushroom_block", new HugeMushroomBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)), true);
@@ -83,10 +104,10 @@ public class BppBlocks
     public static final Block FROZEN_SAPLING = registerBlock("frozen_sapling", new SaplingBlock(BppSaplingGenerator.FROZEN,
             FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), true);
 
-    public static final Block CYAN_MUSHROOM = registerBlock("cyan_mushroom", new SaplingBlock(BppSaplingGenerator.HUGE_CYAN_MUSHROOM,
+    public static final Block CYAN_MUSHROOM = registerBlock("cyan_mushroom", new MushroomBlock(BppConfiguredFeatures.HUGE_CYAN_MUSHROOM_KEY,
             FabricBlockSettings.copyOf(Blocks.BROWN_MUSHROOM)), true);
 
-    public static final Block PURPLE_MUSHROOM = registerBlock("purple_mushroom", new SaplingBlock(BppSaplingGenerator.HUGE_PURPLE_MUSHROOM,
+    public static final Block PURPLE_MUSHROOM = registerBlock("purple_mushroom", new MushroomBlock(BppConfiguredFeatures.HUGE_PURPLE_MUSHROOM_KEY,
             FabricBlockSettings.copyOf(Blocks.BROWN_MUSHROOM)), true);
 
 

@@ -23,7 +23,9 @@ public class BppItemTagGenerator extends FabricTagProvider.ItemTagProvider
         getOrCreateTagBuilder(ItemTags.STONE_BRICKS)
                 .add(BppBlocks.SCORCHED_STONE_BRICKS.asItem())
                 .add(BppBlocks.CRACKED_SCORCHED_STONE_BRICKS.asItem())
-                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS.asItem());
+                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS.asItem())
+                .add(BppBlocks.GRIMSTONE_BRICKS.asItem())
+                .add(BppBlocks.CRACKED_GRIMSTONE_BRICKS.asItem());
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(BppBlocks.EUCALYPTUS_PLANKS.asItem())
@@ -124,6 +126,11 @@ public class BppItemTagGenerator extends FabricTagProvider.ItemTagProvider
                 .add(BppBlocks.FROZEN_WOOD.asItem())
                 .add(BppBlocks.STRIPPED_FROZEN_LOG.asItem())
                 .add(BppBlocks.STRIPPED_FROZEN_WOOD.asItem());
+
+        getOrCreateTagBuilder(BppTags.Items.END_DEPOSITS)
+                .add(BppBlocks.END_DEPOSIT.asItem())
+                .add(BppBlocks.SCORCHED_END_DEPOSIT.asItem())
+                .add(BppBlocks.DEEPSLATE_END_DEPOSIT.asItem());
 
         getOrCreateTagBuilder(ItemTags.SAPLINGS)
                 .add(BppBlocks.EUCALYPTUS_SAPLING.asItem())

@@ -25,20 +25,30 @@ public class BppBlockTagGenerator extends FabricTagProvider.BlockTagProvider
                 .add(BppBlocks.SCORCHED_COBBLESTONE_SLAB)
                 .add(BppBlocks.SCORCHED_STONE_BRICK_SLAB)
                 .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_SLAB)
-                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_SLAB);
+                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_SLAB)
+                .add(BppBlocks.GRIMSTONE_SLAB)
+                .add(BppBlocks.POLISHED_GRIMSTONE_SLAB)
+                .add(BppBlocks.GRIMSTONE_BRICK_SLAB);
+
 
         getOrCreateTagBuilder(BlockTags.STAIRS)
                 .add(BppBlocks.SCORCHED_STONE_STAIRS)
                 .add(BppBlocks.SCORCHED_COBBLESTONE_STAIRS)
                 .add(BppBlocks.SCORCHED_STONE_BRICK_STAIRS)
                 .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_STAIRS)
-                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_STAIRS);
+                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_STAIRS)
+                .add(BppBlocks.GRIMSTONE_STAIRS)
+                .add(BppBlocks.POLISHED_GRIMSTONE_STAIRS)
+                .add(BppBlocks.GRIMSTONE_BRICK_STAIRS);
 
         getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(BppBlocks.SCORCHED_COBBLESTONE_WALL)
                 .add(BppBlocks.SCORCHED_STONE_BRICK_WALL)
                 .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_WALL)
-                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_WALL);
+                .add(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_WALL)
+                .add(BppBlocks.GRIMSTONE_WALL)
+                .add(BppBlocks.POLISHED_GRIMSTONE_WALL)
+                .add(BppBlocks.GRIMSTONE_BRICK_WALL);
 
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(BppBlocks.SCORCHED_DIRT)
@@ -49,15 +59,38 @@ public class BppBlockTagGenerator extends FabricTagProvider.BlockTagProvider
                 .add(BppBlocks.SCORCHED_DIRT)
                 .add(BppBlocks.COARSE_SCORCHED_DIRT)
                 .add(BppBlocks.RANGES_DIRT);
-                //.add(BppBlocks.RANGES_DIRT_PATH)
-                //.add(BppBlocks.SCORCHED_DIRT_PATH);
-
         getOrCreateTagBuilder(BlockTags.STONE_BRICKS)
                 .add(BppBlocks.SCORCHED_STONE_BRICKS)
                 .add(BppBlocks.CRACKED_SCORCHED_STONE_BRICKS)
-                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS);
+                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS)
+                .add(BppBlocks.GRIMSTONE_BRICKS)
+                .add(BppBlocks.CRACKED_GRIMSTONE_BRICKS);
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(BppBlocks.END_DEPOSIT)
+                .add(BppBlocks.SCORCHED_END_DEPOSIT)
+                .add(BppBlocks.DEEPSLATE_END_DEPOSIT);
+
+        getOrCreateTagBuilder(BppTags.Blocks.END_DEPOSITS)
+                .add(BppBlocks.END_DEPOSIT)
+                .add(BppBlocks.SCORCHED_END_DEPOSIT)
+                .add(BppBlocks.DEEPSLATE_END_DEPOSIT);
 
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(BppBlocks.GRIMSTONE)
+                .add(BppBlocks.GRIMSTONE_SLAB)
+                .add(BppBlocks.GRIMSTONE_STAIRS)
+                .add(BppBlocks.GRIMSTONE_WALL)
+                .add(BppBlocks.CRACKED_GRIMSTONE_BRICKS)
+                .add(BppBlocks.GRIMSTONE_BRICKS)
+                .add(BppBlocks.GRIMSTONE_BRICK_SLAB)
+                .add(BppBlocks.GRIMSTONE_BRICK_STAIRS)
+                .add(BppBlocks.GRIMSTONE_BRICK_WALL)
+                .add(BppBlocks.POLISHED_GRIMSTONE)
+                .add(BppBlocks.POLISHED_GRIMSTONE_SLAB)
+                .add(BppBlocks.POLISHED_GRIMSTONE_STAIRS)
+                .add(BppBlocks.POLISHED_GRIMSTONE_WALL)
+
                 .add(BppBlocks.SCORCHED_COBBLESTONE)
                 .add(BppBlocks.SCORCHED_COBBLESTONE_SLAB)
                 .add(BppBlocks.SCORCHED_COBBLESTONE_STAIRS)
@@ -82,7 +115,11 @@ public class BppBlockTagGenerator extends FabricTagProvider.BlockTagProvider
                 .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICKS)
                 .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_SLAB)
                 .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_STAIRS)
-                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_WALL);
+                .add(BppBlocks.MOSSY_SCORCHED_STONE_BRICK_WALL)
+
+                .add(BppBlocks.END_DEPOSIT)
+                .add(BppBlocks.SCORCHED_END_DEPOSIT)
+                .add(BppBlocks.DEEPSLATE_END_DEPOSIT);
 
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
                 .add(BppBlocks.HUGE_CYAN_MUSHROOM)
@@ -228,5 +265,8 @@ public class BppBlockTagGenerator extends FabricTagProvider.BlockTagProvider
                 .add(BppBlocks.END_SAPLING)
                 .add(BppBlocks.FROZEN_SAPLING)
                 .add(BppBlocks.FANCY_BIRCH_SAPLING);
+
+        getOrCreateTagBuilder(BlockTags.BASE_STONE_OVERWORLD)
+                .add(BppBlocks.GRIMSTONE);
     }
 }

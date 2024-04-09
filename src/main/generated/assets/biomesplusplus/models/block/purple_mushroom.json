@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "biomesplusplus:block/purple_mushroom"
+  }
+}

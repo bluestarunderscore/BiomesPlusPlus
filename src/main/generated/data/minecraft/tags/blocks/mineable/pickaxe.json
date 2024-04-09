@@ -1,6 +1,19 @@
 {
   "replace": false,
   "values": [
+    "biomesplusplus:grimstone",
+    "biomesplusplus:grimstone_slab",
+    "biomesplusplus:grimstone_stairs",
+    "biomesplusplus:grimstone_wall",
+    "biomesplusplus:cracked_grimstone_bricks",
+    "biomesplusplus:grimstone_bricks",
+    "biomesplusplus:grimstone_brick_slab",
+    "biomesplusplus:grimstone_brick_stairs",
+    "biomesplusplus:grimstone_brick_wall",
+    "biomesplusplus:polished_grimstone",
+    "biomesplusplus:polished_grimstone_slab",
+    "biomesplusplus:polished_grimstone_stairs",
+    "biomesplusplus:polished_grimstone_wall",
     "biomesplusplus:scorched_cobblestone",
     "biomesplusplus:scorched_cobblestone_slab",
     "biomesplusplus:scorched_cobblestone_stairs",
@@ -20,6 +33,9 @@
     "biomesplusplus:mossy_scorched_stone_bricks",
     "biomesplusplus:mossy_scorched_stone_brick_slab",
     "biomesplusplus:mossy_scorched_stone_brick_stairs",
-    "biomesplusplus:mossy_scorched_stone_brick_wall"
+    "biomesplusplus:mossy_scorched_stone_brick_wall",
+    "biomesplusplus:end_deposit",
+    "biomesplusplus:scorched_end_deposit",
+    "biomesplusplus:deepslate_end_deposit"
   ]
 }

@@ -46,6 +46,9 @@ public class BppBiomes
     public static final ResourceKey<Biome> DECIDUOUS_FOOTHILLS = registerBiomeKey("deciduous_foothills");
     public static final ResourceKey<Biome> ENDER_FOREST = registerBiomeKey("ender_forest");
     public static final ResourceKey<Biome> MAGIC_FOREST = registerBiomeKey("magic_forest");
+    public static final ResourceKey<Biome> MUSHROOM_RAINFOREST = registerBiomeKey("mushroom_rainforest");
+    public static final ResourceKey<Biome> LUSH_FOREST = registerBiomeKey("lush_forest");
+    public static final ResourceKey<Biome> BRUSHLAND = registerBiomeKey("brushland");
 
     public static void bootstrap(BootstapContext<Biome> context)
     {
@@ -62,6 +65,9 @@ public class BppBiomes
         context.register(DECIDUOUS_FOOTHILLS, deciduousFoothills(context));
         context.register(ENDER_FOREST, enderForest(context));
         context.register(MAGIC_FOREST, magicForest(context));
+        context.register(MUSHROOM_RAINFOREST, mushroomRainforest(context));
+        context.register(LUSH_FOREST, lushForest(context));
+        context.register(BRUSHLAND, brushland(context));
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder)
@@ -76,6 +82,44 @@ public class BppBiomes
     }
 
     // BIOMES
+    public static Biome brushland(BootstapContext<Biome> context)
+    {
+        BiomesPlusPlus.LOGGER.info("Init default biome features for bpp brushland");
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE),
+                        context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addPlainGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.4F)
+                .temperature(0.82F)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(BppBiomeColors.DEFAULT_WATER_COLOR)
+                        .waterFogColor(BppBiomeColors.DEFAULT_WATER_FOG_COLOR)
+                        .skyColor(BppBiomeColors.PLAINS_SKY_COLOR)
+                        .fogColor(BppBiomeColors.DEFAULT_FOG_COLOR)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .build())
+                .build();
+
+    }
+
     public static Biome darkSwamp(BootstapContext<Biome> context)
     {
         BiomesPlusPlus.LOGGER.info("Init default biome features for bpp darkSwamp");
@@ -214,6 +258,47 @@ public class BppBiomes
                 .build();
     }
 
+    public static Biome lushForest(BootstapContext<Biome> context)
+    {
+        BiomesPlusPlus.LOGGER.info("Init default biome features for bpp lushForest");
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE),
+                        context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addPlainGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+
+
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.9F)
+                .temperature(0.95F)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(BppBiomeColors.DEFAULT_WATER_COLOR)
+                        .waterFogColor(BppBiomeColors.DEFAULT_WATER_FOG_COLOR)
+                        .skyColor(BppBiomeColors.PLAINS_SKY_COLOR)
+                        .fogColor(BppBiomeColors.DEFAULT_FOG_COLOR)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .backgroundMusic(FOREST_MUSIC)
+                        .build())
+                .build();
+
+    }
+
     public static Biome magicForest(BootstapContext<Biome> context)
     {
         BiomesPlusPlus.LOGGER.info("Init default biome features for bpp magicForest");
@@ -260,6 +345,47 @@ public class BppBiomes
                         .backgroundMusic(FOREST_MUSIC)
                         .build())
                 .build();
+    }
+
+    public static Biome mushroomRainforest(BootstapContext<Biome> context)
+    {
+        BiomesPlusPlus.LOGGER.info("Init default biome features for bpp mushroomRainforest");
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE),
+                        context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addPlainGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addMushroomFieldVegetation(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.9F)
+                .temperature(0.95F)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .grassColorOverride(15792496)
+                        .foliageColorOverride(11139946)
+                        .waterColor(BppBiomeColors.DEFAULT_WATER_COLOR)
+                        .waterFogColor(BppBiomeColors.DEFAULT_WATER_FOG_COLOR)
+                        .skyColor(11513806)
+                        .fogColor(BppBiomeColors.DEFAULT_FOG_COLOR)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .backgroundMusic(JUNGLE_MUSIC)
+                        .build())
+                .build();
+
     }
 
     public static Biome sandstoneRanges(BootstapContext<Biome> context)

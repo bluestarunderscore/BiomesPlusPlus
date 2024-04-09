@@ -38,7 +38,7 @@ public class BppOverworldRegion extends Region
             builder.replaceBiome(Biomes.ERODED_BADLANDS, BppBiomes.SANDSTONE_RANGES);
             builder.replaceBiome(Biomes.WOODED_BADLANDS, BppBiomes.SANDSTONE_RANGES);
             builder.replaceBiome(Biomes.BADLANDS, BppBiomes.SANDSTONE_RANGES);
-            //builder.replaceBiome(Biomes.JUNGLE, BppBiomes.LUSH_FOREST;
+            builder.replaceBiome(Biomes.JUNGLE, BppBiomes.LUSH_FOREST);
 
 
 

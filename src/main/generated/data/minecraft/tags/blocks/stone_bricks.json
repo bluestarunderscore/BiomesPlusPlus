@@ -3,6 +3,8 @@
   "values": [
     "biomesplusplus:scorched_stone_bricks",
     "biomesplusplus:cracked_scorched_stone_bricks",
-    "biomesplusplus:mossy_scorched_stone_bricks"
+    "biomesplusplus:mossy_scorched_stone_bricks",
+    "biomesplusplus:grimstone_bricks",
+    "biomesplusplus:cracked_grimstone_bricks"
   ]
 }

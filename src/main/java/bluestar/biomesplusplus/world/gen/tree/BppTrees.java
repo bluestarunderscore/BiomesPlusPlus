@@ -24,6 +24,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeature
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.AlterGroundDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TrunkVineDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.*;
@@ -145,6 +146,16 @@ public class BppTrees
                 new TwoLayersFeatureSize(2, 0, 2)).ignoreVines().build();
     }
 
+    public static TreeConfiguration getMegaSpruceTree(Block log, Block leaves)
+    {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(log),
+                new GiantTrunkPlacer(13, 2, 14),
+                BlockStateProvider.simple(leaves),
+                new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(13, 17)),
+                new TwoLayersFeatureSize(1, 1, 2)).build();
+    }
+
     public static TreeConfiguration getBush(Block log, Block leaves)
     {
         return new TreeConfiguration.TreeConfigurationBuilder(
@@ -155,11 +166,11 @@ public class BppTrees
                 new TwoLayersFeatureSize(0, 0, 0)).build();
     }
 
-    public static TreeConfiguration getTinyBush(Block log, Block leaves)
+    public static TreeConfiguration getTinyBush(int height, int variation, Block log, Block leaves, boolean hasTrunkLeaves)
     {
         return new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(log),
-                new StraightTrunkPlacer(2,1,0),
+                new StraightTrunkPlacer(height,variation,0),
                 BlockStateProvider.simple(leaves),
                 new FiveBlockFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1)),
                 new TwoLayersFeatureSize(0,0,0)).build();

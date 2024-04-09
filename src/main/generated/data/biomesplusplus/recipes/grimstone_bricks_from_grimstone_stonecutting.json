@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "biomesplusplus:grimstone"
+  },
+  "result": "biomesplusplus:grimstone_bricks"
+}

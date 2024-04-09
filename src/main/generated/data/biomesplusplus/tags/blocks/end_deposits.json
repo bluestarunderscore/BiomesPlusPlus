@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "biomesplusplus:end_deposit",
+    "biomesplusplus:scorched_end_deposit",
+    "biomesplusplus:deepslate_end_deposit"
+  ]
+}

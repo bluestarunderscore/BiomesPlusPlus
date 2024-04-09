@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "biomesplusplus:scorched_dirt"
+    },
+    "S": {
+      "item": "minecraft:gravel"
+    }
+  },
+  "pattern": [
+    "DS",
+    "SD"
+  ],
+  "result": {
+    "count": 4,
+    "item": "biomesplusplus:coarse_scorched_dirt"
+  }
+}

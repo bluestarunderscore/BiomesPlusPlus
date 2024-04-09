@@ -9,7 +9,7 @@ import net.minecraft.world.item.Item;
 
 public class BppItems
 {
-    public static final Item END_STONE_SCRAP = registerItem("end_stone_scrap",
+   public static final Item END_STONE_SCRAP = registerItem("end_stone_scrap",
             new Item(new FabricItemSettings()));
 
 
@@ -18,5 +18,10 @@ public class BppItems
         return Registry.register(BuiltInRegistries.ITEM,
                 new ResourceLocation(BiomesPlusPlus.MOD_ID, name),
                 item);
+    }
+
+    public static void registerBppItems()
+    {
+        BiomesPlusPlus.LOGGER.info("Registering Items for " + BiomesPlusPlus.MOD_ID);
     }
 }

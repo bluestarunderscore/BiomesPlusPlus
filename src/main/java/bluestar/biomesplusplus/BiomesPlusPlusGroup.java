@@ -100,6 +100,24 @@ public class BiomesPlusPlusGroup
 
                                 entries.accept(BppBlocks.CRACKED_SCORCHED_STONE_BRICKS);
 
+                                entries.accept(BppBlocks.GRIMSTONE);
+                                entries.accept(BppBlocks.POLISHED_GRIMSTONE);
+                                entries.accept(BppBlocks.POLISHED_GRIMSTONE_STAIRS);
+                                entries.accept(BppBlocks.POLISHED_GRIMSTONE_SLAB);
+                                entries.accept(BppBlocks.POLISHED_GRIMSTONE_WALL);
+
+                                entries.accept(BppBlocks.GRIMSTONE_BRICKS);
+                                entries.accept(BppBlocks.GRIMSTONE_BRICK_STAIRS);
+                                entries.accept(BppBlocks.GRIMSTONE_BRICK_SLAB);
+                                entries.accept(BppBlocks.GRIMSTONE_BRICK_WALL);
+
+                                entries.accept(BppBlocks.CRACKED_GRIMSTONE_BRICKS);
+
+                                entries.accept(BppBlocks.END_DEPOSIT);
+                                entries.accept(BppBlocks.DEEPSLATE_END_DEPOSIT);
+                                entries.accept(BppBlocks.SCORCHED_END_DEPOSIT);
+                                entries.accept(BppItems.END_STONE_SCRAP);
+
                                 entries.accept(BppBlocks.SCORCHED_DIRT);
                                 entries.accept(BppBlocks.COARSE_SCORCHED_DIRT);
                                 entries.accept(BppBlocks.RANGES_DIRT);
@@ -120,8 +138,6 @@ public class BiomesPlusPlusGroup
 
                                 entries.accept(BppBlocks.CYAN_MUSHROOM);
                                 entries.accept(BppBlocks.PURPLE_MUSHROOM);
-
-                                //entries.accept(BppItems.END_STONE_SCRAP);
 
                             }).build());
 

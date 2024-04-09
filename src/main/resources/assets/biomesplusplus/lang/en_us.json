@@ -4,7 +4,9 @@
   "biome.biomesplusplus.dark_swamp" : "Dark Swamp",
   "biome.biomesplusplus.deciduous_foothills" : "Deciduous Foothills",
   "biome.biomesplusplus.ender_forest" : "Ender Forest",
+  "biome.biomesplusplus.lush_forest" : "Lush Forest",
   "biome.biomesplusplus.magic_forest" : "Magic Forest",
+  "biome.biomesplusplus.mushroom_rainforest" : "Mushroom Rainforest",
   "biome.biomesplusplus.sandstone_ranges" : "Sandstone Ranges",
   "biome.biomesplusplus.silk_wetland" : "Silk Wetland",
   "biome.biomesplusplus.stone_basin" : "Stone Basin",
@@ -13,6 +15,11 @@
   "biome.biomesplusplus.wasteland" : "Wasteland",
   "biome.biomesplusplus.wintry_field" : "Wintry Field",
 
+  "item.biomesplusplus.end_stone_scrap" : "End Stone Scrap",
+  "block.biomesplusplus.end_deposit" : "End Deposit",
+  "block.biomesplusplus.deepslate_end_deposit" : "Deepslate End Deposit",
+  "block.biomesplusplus.scorched_end_deposit" : "Scorched End Deposit",
+
   "block.biomesplusplus.scorched_dirt" : "Scorched Dirt",
   "block.biomesplusplus.coarse_scorched_dirt" : "Coarse Scorched Dirt",
   "block.biomesplusplus.scorched_stone" : "Scorched Stone",
@@ -20,6 +27,26 @@
   "block.biomesplusplus.scorched_stone_stairs" : "Scorched Stone Stairs",
 
   "block.biomesplusplus.ranges_dirt" : "Ranges Dirt",
+
+  "block.biomesplusplus.cyan_mushroom" : "Cyan Mushroom",
+  "block.biomesplusplus.purple_mushroom" : "Purple Mushroom",
+  "block.biomesplusplus.cyan_mushroom_block" : "Cyan Mushroom Block",
+  "block.biomesplusplus.purple_mushroom_block" : "Purple Mushroom Block",
+
+  "block.biomesplusplus.grimstone" : "Grimstone",
+  "block.biomesplusplus.grimstone_slab" : "Grimstone Slab",
+  "block.biomesplusplus.grimstone_stairs" : "Grimstone Stairs",
+  "block.biomesplusplus.grimstone_wall" : "Grimstone Wall",
+  "block.biomesplusplus.polished_grimstone" : "Polished Grimstone",
+  "block.biomesplusplus.polished_grimstone_slab" : "Polished Grimstone Slab",
+  "block.biomesplusplus.polished_grimstone_stairs" : "Polished Grimstone Stairs",
+  "block.biomesplusplus.polished_grimstone_wall" : "Polished Grimstone Wall",
+  "block.biomesplusplus.grimstone_bricks" : "Grimstone Bricks",
+  "block.biomesplusplus.grimstone_brick_slab" : "Grimstone Brick Slab",
+  "block.biomesplusplus.grimstone_brick_stairs" : "Grimstone Brick Stairs",
+  "block.biomesplusplus.grimstone_brick_wall" : "Grimstone Brick Wall",
+  "block.biomesplusplus.cracked_grimstone_bricks" : "Cracked Grimstone Bricks",
+
 
   "block.biomesplusplus.scorched_cobblestone" : "Scorched Cobblestone",
   "block.biomesplusplus.scorched_cobblestone_slab" : "Scorched Cobblestone Slab",

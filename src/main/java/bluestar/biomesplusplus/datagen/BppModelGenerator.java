@@ -60,6 +60,13 @@ public class BppModelGenerator extends FabricModelProvider
         generator.createTrivialBlock(BppBlocks.END_LEAVES, TexturedModel.LEAVES);
         generator.createTrivialBlock(BppBlocks.FROZEN_LEAVES, TexturedModel.LEAVES);
 
+        //generator.createTrivialCube(BppBlocks.GRIMSTONE);
+
+        generator.createTrivialCube(BppBlocks.END_DEPOSIT);
+        generator.createTrivialCube(BppBlocks.DEEPSLATE_END_DEPOSIT);
+        generator.createTrivialCube(BppBlocks.SCORCHED_END_DEPOSIT);
+
+        generator.createTrivialCube(BppBlocks.CRACKED_GRIMSTONE_BRICKS);
         generator.createTrivialCube(BppBlocks.CRACKED_SCORCHED_STONE_BRICKS);
         generator.createTrivialCube(BppBlocks.SCORCHED_DIRT);
         generator.createTrivialCube(BppBlocks.COARSE_SCORCHED_DIRT);
@@ -73,6 +80,21 @@ public class BppModelGenerator extends FabricModelProvider
 
         generator.createCrossBlockWithDefaultItem(BppBlocks.CYAN_MUSHROOM, BlockModelGenerators.TintState.NOT_TINTED);
         generator.createCrossBlockWithDefaultItem(BppBlocks.PURPLE_MUSHROOM, BlockModelGenerators.TintState.NOT_TINTED);
+
+        BlockModelGenerators.BlockFamilyProvider grimstonePool = generator.family(BppBlocks.GRIMSTONE);
+        grimstonePool.slab(BppBlocks.GRIMSTONE_SLAB);
+        grimstonePool.stairs(BppBlocks.GRIMSTONE_STAIRS);
+        grimstonePool.wall(BppBlocks.GRIMSTONE_WALL);
+
+        BlockModelGenerators.BlockFamilyProvider polishedGrimstonePool = generator.family(BppBlocks.POLISHED_GRIMSTONE);
+        polishedGrimstonePool.slab(BppBlocks.POLISHED_GRIMSTONE_SLAB);
+        polishedGrimstonePool.stairs(BppBlocks.POLISHED_GRIMSTONE_STAIRS);
+        polishedGrimstonePool.wall(BppBlocks.POLISHED_GRIMSTONE_WALL);
+
+        BlockModelGenerators.BlockFamilyProvider grimstoneBrickPool = generator.family(BppBlocks.GRIMSTONE_BRICKS);
+        grimstoneBrickPool.slab(BppBlocks.GRIMSTONE_BRICK_SLAB);
+        grimstoneBrickPool.stairs(BppBlocks.GRIMSTONE_BRICK_STAIRS);
+        grimstoneBrickPool.wall(BppBlocks.GRIMSTONE_BRICK_WALL);
 
         BlockModelGenerators.BlockFamilyProvider scorchedStonePool = generator.family(BppBlocks.SCORCHED_STONE);
         scorchedStonePool.slab(BppBlocks.SCORCHED_STONE_SLAB);

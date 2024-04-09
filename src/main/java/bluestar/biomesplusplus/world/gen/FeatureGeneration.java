@@ -78,5 +78,29 @@ public class FeatureGeneration
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.ENDER_FOREST),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.END_BUSH_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.MUSHROOM_RAINFOREST),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.RAINFOREST_OAK_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.MUSHROOM_RAINFOREST),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.HUGE_CYAN_MUSHROOM_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.MUSHROOM_RAINFOREST),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.HUGE_PURPLE_MUSHROOM_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.LUSH_FOREST),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.FANCY_OAK_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.BRUSHLAND),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.TINY_OAK_BUSH_KEY_PLACED);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.BRUSHLAND),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.OAK_BUSH_KEY_PLACED);
     }
 }
