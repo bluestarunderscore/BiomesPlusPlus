@@ -6,12 +6,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.LootDataManager;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
@@ -29,6 +26,9 @@ public class BppLootTableGenerator extends FabricBlockLootTableProvider
     @Override
     public void generate()
     {
+
+        add(BppBlocks.SCORCHED_STONE, (Block block) -> this.createSingleItemTableWithSilkTouch(block, BppBlocks.SCORCHED_COBBLESTONE));
+
         //Grimstone blocks
         dropSelf(BppBlocks.GRIMSTONE);
         dropSelf(BppBlocks.GRIMSTONE_STAIRS);
@@ -56,7 +56,6 @@ public class BppLootTableGenerator extends FabricBlockLootTableProvider
         dropSelf(BppBlocks.MOSSY_SCORCHED_COBBLESTONE);
         dropSelf(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_STAIRS);
         dropSelf(BppBlocks.MOSSY_SCORCHED_COBBLESTONE_WALL);
-        otherWhenSilkTouch(BppBlocks.SCORCHED_STONE, BppBlocks.SCORCHED_COBBLESTONE);
         dropSelf(BppBlocks.SCORCHED_STONE_STAIRS);
         dropSelf(BppBlocks.SCORCHED_STONE_BRICKS);
         dropSelf(BppBlocks.SCORCHED_STONE_BRICK_STAIRS);

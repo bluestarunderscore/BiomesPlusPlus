@@ -101,6 +101,10 @@ public class BiomesPlusPlusGroup
                                 entries.accept(BppBlocks.CRACKED_SCORCHED_STONE_BRICKS);
 
                                 entries.accept(BppBlocks.GRIMSTONE);
+                                entries.accept(BppBlocks.GRIMSTONE_STAIRS);
+                                entries.accept(BppBlocks.GRIMSTONE_SLAB);
+                                entries.accept(BppBlocks.GRIMSTONE_WALL);
+
                                 entries.accept(BppBlocks.POLISHED_GRIMSTONE);
                                 entries.accept(BppBlocks.POLISHED_GRIMSTONE_STAIRS);
                                 entries.accept(BppBlocks.POLISHED_GRIMSTONE_SLAB);
