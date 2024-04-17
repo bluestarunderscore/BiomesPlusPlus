@@ -28,6 +28,7 @@ public class BppPlacedFeatures
     public static final ResourceKey<PlacedFeature> TALL_OAK_KEY_PLACED = registerKey("tall_oak");
     public static final ResourceKey<PlacedFeature> FANCY_BIRCH_KEY_PLACED = registerKey("fancy_birch");
     public static final ResourceKey<PlacedFeature> FANCY_OAK_KEY_PLACED = registerKey("fancy_oak");
+    public static final ResourceKey<PlacedFeature> FANCY_OAK_CHANCEPER_KEY_PLACED = registerKey("fancy_oak_talloak");
     public static final ResourceKey<PlacedFeature> EUCALYPTUS_KEY_PLACED = registerKey("eucalyptus");
     public static final ResourceKey<PlacedFeature> EUCALYPTUS_RANGES_KEY_PLACED = registerKey("eucalyptus_ranges");
     public static final ResourceKey<PlacedFeature> TALL_SWAMP_KEY_PLACED = registerKey("tall_swamp");
@@ -61,6 +62,9 @@ public class BppPlacedFeatures
 
         register(context, FANCY_OAK_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.FANCY_OAK_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(12, 0.01f, 1),(Blocks.OAK_SAPLING)));
+
+        register(context, FANCY_OAK_CHANCEPER_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.FANCY_OAK_KEY),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(2),(Blocks.OAK_SAPLING)));
 
         register(context, EUCALYPTUS_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.EUCALYPTUS_KEY),
                 VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(35),(Blocks.OAK_SAPLING)));
@@ -114,10 +118,10 @@ public class BppPlacedFeatures
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(17, 0.01f, 1),(Blocks.OAK_SAPLING)));
 
         register(context, HUGE_CYAN_MUSHROOM_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.HUGE_CYAN_MUSHROOM_KEY),
-                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(3),(Blocks.BROWN_MUSHROOM)));
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(4),(Blocks.BROWN_MUSHROOM)));
 
         register(context, HUGE_PURPLE_MUSHROOM_KEY_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(BppConfiguredFeatures.HUGE_PURPLE_MUSHROOM_KEY),
-                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(3),(Blocks.BROWN_MUSHROOM)));
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(4),(Blocks.BROWN_MUSHROOM)));
 
     }
 

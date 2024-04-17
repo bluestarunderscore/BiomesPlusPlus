@@ -14,6 +14,10 @@ public class FeatureGeneration
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.TALL_OAK_KEY_PLACED);
 
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.TALL_OAK_FOREST),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                BppPlacedFeatures.FANCY_OAK_CHANCEPER_KEY_PLACED);
+
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.RIVER, Biomes.FROZEN_RIVER, Biomes.BIRCH_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.FANCY_BIRCH_KEY_PLACED);
@@ -83,11 +87,11 @@ public class FeatureGeneration
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.RAINFOREST_OAK_KEY_PLACED);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.MUSHROOM_RAINFOREST),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.MUSHROOM_RAINFOREST, Biomes.MUSHROOM_FIELDS),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.HUGE_CYAN_MUSHROOM_KEY_PLACED);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.MUSHROOM_RAINFOREST),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BppBiomes.MUSHROOM_RAINFOREST, Biomes.MUSHROOM_FIELDS),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 BppPlacedFeatures.HUGE_PURPLE_MUSHROOM_KEY_PLACED);
 
