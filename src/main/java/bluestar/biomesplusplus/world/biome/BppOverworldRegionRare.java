@@ -31,6 +31,7 @@ public class BppOverworldRegionRare extends Region
             builder.replaceBiome(Biomes.PLAINS, BppBiomes.BRUSHLAND);
             builder.replaceBiome(Biomes.FOREST, BppBiomes.MAGIC_FOREST);
             builder.replaceBiome(Biomes.JUNGLE, BppBiomes.MUSHROOM_RAINFOREST);
+            builder.replaceBiome(Biomes.BEACH, BppBiomes.GRAVEL_BEACH);
         });
     }
 }

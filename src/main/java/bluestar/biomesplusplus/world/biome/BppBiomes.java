@@ -49,6 +49,7 @@ public class BppBiomes
     public static final ResourceKey<Biome> MUSHROOM_RAINFOREST = registerBiomeKey("mushroom_rainforest");
     public static final ResourceKey<Biome> LUSH_FOREST = registerBiomeKey("lush_forest");
     public static final ResourceKey<Biome> BRUSHLAND = registerBiomeKey("brushland");
+    public static final ResourceKey<Biome> GRAVEL_BEACH = registerBiomeKey("gravel_beach");
 
     public static void bootstrap(BootstapContext<Biome> context)
     {
@@ -68,6 +69,7 @@ public class BppBiomes
         context.register(MUSHROOM_RAINFOREST, mushroomRainforest(context));
         context.register(LUSH_FOREST, lushForest(context));
         context.register(BRUSHLAND, brushland(context));
+        context.register(GRAVEL_BEACH, gravelBeach(context));
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder)
@@ -299,6 +301,43 @@ public class BppBiomes
 
     }
 
+    public static Biome gravelBeach(BootstapContext<Biome> context)
+    {
+
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE),
+                        context.lookup(Registries.CONFIGURED_CARVER));
+
+
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.4F)
+                .temperature(0.8F)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(BppBiomeColors.DEFAULT_WATER_COLOR)
+                        .waterFogColor(BppBiomeColors.DEFAULT_WATER_FOG_COLOR)
+                        .skyColor(BppBiomeColors.PLAINS_SKY_COLOR)
+                        .fogColor(BppBiomeColors.DEFAULT_FOG_COLOR)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .build())
+                .build();
+
+    }
+
     public static Biome magicForest(BootstapContext<Biome> context)
     {
         BiomesPlusPlus.LOGGER.info("Init default biome features for bpp magicForest");
@@ -513,6 +552,7 @@ public class BppBiomes
         globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_BIRCH_AND_OAK);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_FOREST);
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
